@@ -4,8 +4,8 @@ import ItemForm from './ItemForm.js';
 import ItemList from './ItemList.js'
 
 function App() {
-  const [entry, setEntry] = React.useState(""); // start w/ empty input
   const [items, setItems] = React.useState([]); // start w/ empty array
+  const [entry, setEntry] = React.useState(""); // start w/ empty input
 
   function handleFormSubmit(e) {
     e.preventDefault();
@@ -22,15 +22,24 @@ function App() {
     setEntry(e.target.value);
   }
 
+  /* 
   function handleDeleteClick(id) {
     setItems(items.filter((item) => item.id !== id));
   }
+  */
 
   return (
     <main>
       <h1>Shopping List</h1>
-      <ItemForm entry={entry} onEntryChange={handleEntryChange} onFormSubmit={handleFormSubmit} />
-      <ItemList items={items} onDeleteClick={handleDeleteClick} />
+      <ItemForm
+        entry={entry}
+        onEntryChange={handleEntryChange}
+        onFormSubmit={handleFormSubmit}
+      />
+      <ItemList
+        items={items}
+      //onDeleteClick={handleDeleteClick}
+      />
     </main>
   );
 }

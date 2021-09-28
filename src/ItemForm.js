@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function ItemForm(props){
+export default function ItemForm(props) {
   return (
     <form onSubmit={props.onFormSubmit}>
       <label htmlFor='item-name'>Enter an item:</label>
