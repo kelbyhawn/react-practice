@@ -1,31 +1,119 @@
-.App 
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;500&display=swap')
+
+$color-bg: #282c34
+$color-main: #61dafb
+$font-main: 'Work Sans', sans-serif
+$width-sm: 640px
+$hover: all .2s ease-in-out
+
+@mixin transition($property)
+  -webkit-transition: $property
+  -ms-transition: $property
+  transition: $property
+
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+
+html,body
+  height: 100%
+
+body
+  background: $color-bg
+  color: $color-main
+  font-family: $font-main
+  font-size: 16px
   text-align: center
-
-.App-logo 
-  height: 40vmin
-  pointer-events: none
-
-  @media (prefers-reduced-motion: no-preference) 
-    animation: App-logo-spin infinite 20s linear
-
-.App-header 
-  background-color: #282c34
-  min-height: 100vh
-  display: flex
-  flex-direction: column
-  align-items: center
+  line-height: 1.4
+  
+main
+  height: 100%
+  display: inline-flex
   justify-content: center
-  font-size: calc(10px + 2vmin)
+  align-items: center
+  flex-direction: column
+  
+h1
+  font-size: 2.5em
+  font-weight: 500
+  margin: 0 auto .5em
+  
+  @media screen and (max-width: $width-sm)
+    font-size: 1.75em
+
+h2
+  margin-bottom: 1em
+    
+p
+  font-weight: 300
+  font-size: 1.25em
+  
+  &:first-of-type
+    margin-bottom: .5em
+  
+hr
+  width: 100%
+  border: 0
+  border-bottom: 1px dashed white
+  margin-bottom: 2em
+  
+ul
+  padding: 0
+  font-weight: 300
+  list-style: none
+  text-align: left
   color: white
-
-.App-link 
-  color: #61dafb
-
-@keyframes App-logo-spin 
-  from 
-    transform: rotate(0deg)
   
-  to 
-    transform: rotate(360deg)
+  li
+    display: block
+    
+    div
+      display: inline-flex
+      text-align: left
+      
+    label
+      flex-basis: 75%
   
+label
+  display: block
+  margin-bottom: .25em
+  text-align: left
+  
+input, select, textarea
+  display: block
+  width: 100%
+  margin-bottom: 1em
+  border: none
+  border-radius: 4px
+  padding: 12px
+  font-family: $font-main
+  font-weight: 300
+  font-size: 1em
+  
+  &[type="checkbox"]
+    margin: -4px 8px 0 0
+    width: 15px
+  
+button
+  width: 100%
+  background: $color-main
+  color: $color-bg
+  font-family: $font-main
+  font-size: 1em
+  margin: .5em auto 1.5em
+  padding: .75em 1em
+  border: none
+  border-radius: 4px
+  cursor: pointer
+  
+  &.btn-delete
+    margin: -3px 0 0 10px
+    padding: 0
+    background: none
+    color: red
+    font-size: 1.7em
+    font-weight: 300
+    line-height: 1
+    flex-basis: 10%
 
