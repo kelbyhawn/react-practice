@@ -10,8 +10,11 @@ function App() {
   function handleFormSubmit(e) {
     e.preventDefault();
 
-    // add each entry to the new items array created in ItemList component
-    setItems([...items, entry]);
+    // add each entry object to the new items array created in ItemList component
+    setItems([...items, {
+      id: items.length + 1, // set an id (this will change with APIs)
+      entry: entry, // set entry props from entry state
+    }]);
 
     // clear entry form in ItemForm component
     setEntry("");
@@ -22,11 +25,10 @@ function App() {
     setEntry(e.target.value);
   }
 
-  /* 
   function handleDeleteClick(id) {
+    // delete the entry that matches item.id
     setItems(items.filter((item) => item.id !== id));
   }
-  */
 
   return (
     <main>
@@ -38,7 +40,7 @@ function App() {
       />
       <ItemList
         items={items}
-      //onDeleteClick={handleDeleteClick}
+        onDeleteClick={handleDeleteClick}
       />
     </main>
   );
