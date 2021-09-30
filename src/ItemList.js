@@ -1,5 +1,7 @@
 import React from 'react';
 
+// returns a list of items added from the ItemForm component
+// use props to call corresponding state value in parent component
 export default function ItemList(props) {
   return (
     <ul>
