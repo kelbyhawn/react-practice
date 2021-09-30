@@ -34,6 +34,7 @@ main
   align-items: center
   flex-direction: column
   margin: 10% 0
+  width: 400px
   
 h1
   font-size: 2.5em
@@ -60,21 +61,23 @@ hr
   margin-bottom: 2em
 
 form
-  width: 450px
+  width: 100%
   
 ul
-  padding: 1em 0
+  padding: .5em 0
   font-weight: 300
   list-style: none
   text-align: left
   color: white
-  border-top: 2px solid
-  width: 450px
+  border-top: 1px solid
+  width: 100%
   
   li
     display: block
     margin-bottom: .5em
-    
+    padding: .5em
+    border-bottom: 1px dashed rgba(white,.5)
+
     div
       display: inline-flex
       text-align: left
@@ -113,14 +116,19 @@ button
   border: none
   border-radius: 4px
   cursor: pointer
+  @include transition($hover)
+  
   
   &.btn-delete
     margin: -3px 0 0 10px
     padding: 0
     background: none
-    color: red
+    color: rgba(white, .5)
     font-size: 1.7em
     font-weight: 300
     line-height: 1
     flex-basis: 10%
+
+    &:hover
+      color: rgba(201, 45, 45, 1)
 
