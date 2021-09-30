@@ -1,7 +1,7 @@
 # react-practice
 Practicing React!
 
-## Built with
+## Dependencies
 - [Create React App](https://create-react-app.dev)
-- [clsx](https://github.com/lukeed/clsx)
 - [Sass](https://sass-lang.com/)
+- [clsx](https://github.com/lukeed/clsx)
