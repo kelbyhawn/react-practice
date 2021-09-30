@@ -2,6 +2,7 @@
 
 $color-bg: #282c34
 $color-main: #61dafb
+$color-red: #c92d2d
 $font-main: 'Work Sans', sans-serif
 $width-sm: 640px
 $hover: all .2s ease-in-out
@@ -34,7 +35,7 @@ main
   align-items: center
   flex-direction: column
   margin: 10% 0
-  width: 400px
+  max-width: 420px
   
 h1
   font-size: 2.5em
@@ -53,6 +54,11 @@ p
   
   &:first-of-type
     margin-bottom: .5em
+
+  &.error-msg
+    color: $color-red
+    font-weight: 500
+    font-size: 1em
   
 hr
   width: 100%
@@ -69,7 +75,6 @@ ul
   list-style: none
   text-align: left
   color: white
-  border-top: 1px solid
   width: 100%
   
   li

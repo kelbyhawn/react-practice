@@ -5,19 +5,30 @@ import ItemList from './ItemList.js'
 
 function App() {
   const [items, setItems] = React.useState([]); // start w/ empty array
-  const [entry, setEntry] = React.useState(""); // start w/ empty input
+  const [entry, setEntry] = React.useState(''); // start w/ empty input
+  const [validation, setValidation] = React.useState(''); // start w/ empty p
 
   function handleFormSubmit(e) {
     e.preventDefault();
 
+    // if entry input is empty show validation message
+    if (!entry) {
+      setValidation("Please enter an item");
+      return;
+    }
+
     // add each entry object to the new items array created in ItemList component
-    setItems([...items, {
-      id: items.length + 1, // set an id (this will change with APIs)
-      entry: entry, // set entry props from entry state
-    }]);
+    setItems([
+      ...items,
+      {
+        id: items.length + 1, // set an id (this will change with APIs)
+        entry: entry, // set entry props from entry state
+      },
+    ]);
 
     // clear entry form in ItemForm component
     setEntry("");
+    setValidation("");
   }
 
   function handleEntryChange(e) {
@@ -32,16 +43,14 @@ function App() {
 
   return (
     <main>
-      <h1>Shopping List</h1>
+      <h1>Simple Shopping List</h1>
       <ItemForm
         entry={entry}
+        validation={validation}
         onEntryChange={handleEntryChange}
         onFormSubmit={handleFormSubmit}
       />
-      <ItemList
-        items={items}
-        onDeleteClick={handleDeleteClick}
-      />
+      <ItemList items={items} onDeleteClick={handleDeleteClick} />
     </main>
   );
 }
