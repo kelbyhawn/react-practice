@@ -2,6 +2,7 @@
 
 $color-bg: #282c34
 $color-main: #61dafb
+$color-red: #c92d2d
 $font-main: 'Work Sans', sans-serif
 $width-sm: 640px
 $hover: all .2s ease-in-out
@@ -34,7 +35,7 @@ main
   align-items: center
   flex-direction: column
   margin: 10% 0
-  width: 400px
+  max-width: 420px
   
 h1
   font-size: 2.5em
@@ -53,6 +54,11 @@ p
   
   &:first-of-type
     margin-bottom: .5em
+
+  &.error-msg
+    color: $color-red
+    font-weight: 500
+    font-size: 1em
   
 hr
   width: 100%
@@ -69,21 +75,22 @@ ul
   list-style: none
   text-align: left
   color: white
-  border-top: 1px solid
   width: 100%
   
   li
     display: block
-    margin-bottom: .5em
-    padding: .5em
+    margin-bottom: .75em
+    padding: 0 .75em .75em .5em
     border-bottom: 1px dashed rgba(white,.5)
 
     div
       display: inline-flex
+      align-items: center
       text-align: left
       
     label
       flex-basis: 100%
+      margin-bottom: 0
   
 label
   display: block
@@ -101,9 +108,9 @@ input, select, textarea
   font-weight: 300
   font-size: 1em
   
-  &[type="checkbox"]
-    margin: -4px 8px 0 0
-    width: 15px
+input[type="checkbox"]
+  margin: 0 8px 0 0
+  width: initial
   
 button
   width: 100%
@@ -111,7 +118,7 @@ button
   color: $color-bg
   font-family: $font-main
   font-size: 1em
-  margin: .5em auto 1.5em
+  margin: .5em auto 0
   padding: .75em 1em
   border: none
   border-radius: 4px
@@ -120,15 +127,15 @@ button
   
   
   &.btn-delete
-    margin: -3px 0 0 10px
+    margin: -2px 0 0 10px
     padding: 0
     background: none
     color: rgba(white, .5)
-    font-size: 1.7em
+    font-size: 26px
     font-weight: 300
     line-height: 1
     flex-basis: 10%
 
     &:hover
-      color: rgba(201, 45, 45, 1)
+      color: $color-red
 
