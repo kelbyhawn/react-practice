@@ -1,5 +1,7 @@
 # react-practice
-Practicing React!
+Learning React by creating a simple shopping list app
+
+*Currently in development mode only*
 
 ## Dependencies
 - [React](https://reactjs.org/)
