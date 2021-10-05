@@ -8,6 +8,17 @@ function App() {
   const [entry, setEntry] = React.useState(''); // start w/ empty input
   const [validation, setValidation] = React.useState(''); // start w/ empty p
 
+  // udpdate the title w/ the useEffect hook each time an item is added to the list
+  // always put useEffect hook at the top of the component to avoid errors
+  // never call hooks in loops, conditions, or nested functions
+  React.useEffect(() => {
+    if (items.length === 0) {
+      document.title = 'Add an item';
+    } else {
+      document.title = `${items.length} items in list`;
+    }
+  })
+
   function handleFormSubmit(e) {
     e.preventDefault();
 
