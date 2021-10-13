@@ -2,6 +2,7 @@ import React from 'react';
 import './App.sass';
 import ItemForm from './ItemForm.js';
 import ItemList from './ItemList.js'
+import Map from './Map.js';
 
 function App() {
   const [items, setItems] = React.useState([]); // start w/ empty array
@@ -62,6 +63,7 @@ function App() {
         onFormSubmit={handleFormSubmit}
       />
       <ItemList items={items} onDeleteClick={handleDeleteClick} />
+      <Map />
     </main>
   );
 }
