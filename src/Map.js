@@ -7,8 +7,8 @@ mapboxgl.accessToken =
 export default function Map() {
   const mapContainer = useRef(null);
   const map = useRef(null);
-  const [lng, setLng] = useState(-70.9);
-  const [lat, setLat] = useState(42.35);
+  const [lng, setLng] = useState(-122.33207);
+  const [lat, setLat] = useState(47.60621);
   const [zoom, setZoom] = useState(9);
 
   useEffect(() => {
@@ -21,9 +21,21 @@ export default function Map() {
     });
   });
 
+  useEffect(() => {
+    if (!map.current) return; // wait for map to initialize
+    map.current.on("move", () => {
+      setLng(map.current.getCenter().lng.toFixed(4));
+      setLat(map.current.getCenter().lat.toFixed(4));
+      setZoom(map.current.getZoom().toFixed(2));
+    });
+  });
+
   return (
     <>
-      <div>
+      <div className='map-wrapper'>
+        <div className='sidebar'>
+          Longitude: {lng} | Latitude: {lat} | Zoom: {zoom}
+        </div>
         <div ref={mapContainer} className='map-container' />
       </div>
     </>

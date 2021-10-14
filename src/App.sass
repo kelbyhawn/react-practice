@@ -35,7 +35,7 @@ main
   align-items: center
   flex-direction: column
   margin: 10% 0
-  max-width: 420px
+  width: 600px
   
 h1
   font-size: 2.5em
@@ -67,79 +67,94 @@ hr
   margin-bottom: 2em
 
 form
-  width: 100%
+  width: 450px
   
-ul
-  padding: .5em 0
-  font-weight: 300
-  list-style: none
-  text-align: left
-  color: white
-  width: 100%
-  
-  li
-    display: block
-    margin-bottom: .75em
-    padding: 0 .75em .75em .5em
-    border-bottom: 1px dashed rgba(white,.5)
-
-    div
-      display: inline-flex
-      align-items: center
-      text-align: left
-      
-    label
-      flex-basis: 100%
-      margin-bottom: 0
-  
-label
-  display: block
-  margin-bottom: .25em
-  text-align: left
-  
-input, select, textarea
-  display: block
-  width: 100%
-  margin-bottom: 1em
-  border: none
-  border-radius: 4px
-  padding: 12px
-  font-family: $font-main
-  font-weight: 300
-  font-size: 1em
-  
-input[type="checkbox"]
-  margin: 0 8px 0 0
-  width: initial
-  
-button
-  width: 100%
-  background: $color-main
-  color: $color-bg
-  font-family: $font-main
-  font-size: 1em
-  margin: .5em auto 0
-  padding: .75em 1em
-  border: none
-  border-radius: 4px
-  cursor: pointer
-  @include transition($hover)
-  
-  
-  &.btn-delete
-    margin: -2px 0 0 10px
-    padding: 0
-    background: none
-    color: rgba(white, .5)
-    font-size: 26px
+  ul
+    padding: .5em 0
     font-weight: 300
-    line-height: 1
-    flex-basis: 10%
+    list-style: none
+    text-align: left
+    color: white
+    width: 100%
+    
+    li
+      display: block
+      margin-bottom: .75em
+      padding: 0 .75em .75em .5em
+      border-bottom: 1px dashed rgba(white,.5)
 
-    &:hover
-      color: $color-red
+      div
+        display: inline-flex
+        align-items: center
+        text-align: left
+        
+      label
+        flex-basis: 100%
+        margin-bottom: 0
+    
+  label
+    display: block
+    margin-bottom: .25em
+    text-align: left
+    
+  input, select, textarea
+    display: block
+    width: 100%
+    margin-bottom: 1em
+    border: none
+    border-radius: 4px
+    padding: 12px
+    font-family: $font-main
+    font-weight: 300
+    font-size: 1em
+    
+  input[type="checkbox"]
+    margin: 0 8px 0 0
+    width: initial
+    
+  button
+    width: 100%
+    background: $color-main
+    color: $color-bg
+    font-family: $font-main
+    font-size: 1em
+    margin: .5em auto 0
+    padding: .75em 1em
+    border: none
+    border-radius: 4px
+    cursor: pointer
+    @include transition($hover)
+    
+    
+    &.btn-delete
+      margin: -2px 0 0 10px
+      padding: 0
+      background: none
+      color: rgba(white, .5)
+      font-size: 26px
+      font-weight: 300
+      line-height: 1
+      flex-basis: 10%
+
+      &:hover
+        color: $color-red
+
+.map-wrapper
+  position: relative
+  border-top: 2px solid white
+  width: 600px
+  margin-top: 2em
 
 .map-container 
   height: 400px
 
-
+.sidebar
+  background-color: rgba(35, 55, 75, 0.9) 
+  color: #fff 
+  padding: 6px 12px 
+  z-index: 1 
+  position: absolute 
+  top: 0 
+  left: 0 
+  margin: 12px 
+  border-radius: 4px 
