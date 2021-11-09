@@ -68,29 +68,6 @@ hr
 
 form
   width: 450px
-  
-  ul
-    padding: .5em 0
-    font-weight: 300
-    list-style: none
-    text-align: left
-    color: white
-    width: 100%
-    
-    li
-      display: block
-      margin-bottom: .75em
-      padding: 0 .75em .75em .5em
-      border-bottom: 1px dashed rgba(white,.5)
-
-      div
-        display: inline-flex
-        align-items: center
-        text-align: left
-        
-      label
-        flex-basis: 100%
-        margin-bottom: 0
     
   label
     display: block
@@ -112,32 +89,55 @@ form
     margin: 0 8px 0 0
     width: initial
     
-  button
-    width: 100%
-    background: $color-main
-    color: $color-bg
-    font-family: $font-main
-    font-size: 1em
-    margin: .5em auto 0
-    padding: .75em 1em
-    border: none
-    border-radius: 4px
-    cursor: pointer
-    @include transition($hover)
-    
-    
-    &.btn-delete
-      margin: -2px 0 0 10px
-      padding: 0
-      background: none
-      color: rgba(white, .5)
-      font-size: 26px
-      font-weight: 300
-      line-height: 1
-      flex-basis: 10%
+button
+  width: 100%
+  background: $color-main
+  color: $color-bg
+  font-family: $font-main
+  font-size: 1em
+  margin: .5em auto 0
+  padding: .75em 1em
+  border: none
+  border-radius: 4px
+  cursor: pointer
+  @include transition($hover)
+  
+  
+  &.btn-delete
+    margin: -2px 0 0 10px
+    padding: 0
+    background: none
+    color: rgba(white, .5)
+    font-size: 26px
+    font-weight: 300
+    line-height: 1
+    flex-basis: 10%
 
-      &:hover
-        color: $color-red
+    &:hover
+      color: $color-red
+
+ul
+  width: 450px
+  padding: .5em 0
+  font-weight: 300
+  list-style: none
+  text-align: left
+  color: white
+  
+  li
+    display: block
+    margin-bottom: .75em
+    padding: 0 .75em .75em .5em
+    border-bottom: 1px dashed rgba(white,.5)
+
+    div
+      display: inline-flex
+      align-items: center
+      text-align: left
+      
+    label
+      flex-basis: 100%
+      margin: 0 0 0 8px
 
 .map-wrapper
   position: relative
