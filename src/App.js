@@ -5,20 +5,34 @@ import ItemList from './ItemList.js'
 import Map from './Map.js';
 
 function App() {
-  const [items, setItems] = React.useState([]); // start w/ empty array
-  const [entry, setEntry] = React.useState(''); // start w/ empty input
-  const [validation, setValidation] = React.useState(''); // start w/ empty p
+  // Lazy initial state; return the value from localStorage w/ .getItem() method
+  const [items, setItems] = React.useState(() => {
+    const listItems = localStorage.getItem("items");
+    if (listItems) {
+      // parse items array when retrieving
+      return JSON.parse(listItems);
+    }
+    return [];
+  }); // start w/ empty array
+  const [entry, setEntry] = React.useState(""); // start w/ empty input
+  const [validation, setValidation] = React.useState(""); // start w/ empty p
 
   // udpdate the title w/ the useEffect hook each time an item is added to the list
   // always put useEffect hook at the top of the component to avoid errors
   // never call hooks in loops, conditions, or nested functions
   React.useEffect(() => {
     if (items.length === 0) {
-      document.title = 'Add an item';
+      document.title = "Add an item";
     } else {
       document.title = `${items.length} items in list`;
     }
-  })
+  });
+
+  // store items added in local storage
+  React.useEffect(() => {
+    // stringify the array of items to store it
+    localStorage.setItem("items", JSON.stringify(items));
+  }, [items]); // update when items state changes
 
   function handleFormSubmit(e) {
     e.preventDefault();

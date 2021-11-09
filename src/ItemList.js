@@ -13,7 +13,7 @@ export default function ItemList(props) {
               type='checkbox'
               id={item.entry} // call object key "entry" from setItems array in App
               name={item.entry} 
-              value={item.entry} 
+              value={item.entry}
             />
             <label htmlFor={item.entry}>{item.entry}</label>  
             <button
