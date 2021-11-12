@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import './App.sass';
 import ItemForm from './ItemForm.js';
 import ItemList from './ItemList.js'
@@ -6,7 +6,7 @@ import Map from './Map.js';
 
 function App() {
   // Lazy initial state; return the value from localStorage w/ .getItem() method
-  const [items, setItems] = React.useState(() => {
+  const [items, setItems] = useState(() => {
     const listItems = localStorage.getItem("items");
     if (listItems) {
       // parse items array when retrieving
@@ -14,13 +14,13 @@ function App() {
     }
     return [];
   }); // start w/ empty array
-  const [entry, setEntry] = React.useState(""); // start w/ empty input
-  const [validation, setValidation] = React.useState(""); // start w/ empty p
+  const [entry, setEntry] = useState(""); // start w/ empty input
+  const [validation, setValidation] = useState(""); // start w/ empty p
 
   // udpdate the title w/ the useEffect hook each time an item is added to the list
   // always put useEffect hook at the top of the component to avoid errors
   // never call hooks in loops, conditions, or nested functions
-  React.useEffect(() => {
+  useEffect(() => {
     if (items.length === 0) {
       document.title = "Add an item";
     } else {
@@ -29,7 +29,7 @@ function App() {
   });
 
   // store items added in local storage
-  React.useEffect(() => {
+  useEffect(() => {
     // stringify the array of items to store it
     localStorage.setItem("items", JSON.stringify(items));
   }, [items]); // update when items state changes
