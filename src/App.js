@@ -77,7 +77,7 @@ function App() {
         onFormSubmit={handleFormSubmit}
       />
       <ItemList items={items} onDeleteClick={handleDeleteClick} />
-      <Map />
+      {/* <Map /> */}
     </main>
   );
 }
