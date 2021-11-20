@@ -1,15 +1,19 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import './App.sass';
 import Map from './Map';
 import ShoppingList from './ShoppingList';
+import CatPics from './CatPics';
 
 function App() {
-  
-
   return (
     <main>
       <ShoppingList />
-      {/* <Map /> */}
+      <hr />
+      <CatPics />
+      {/* 
+      <hr />
+      <Map /> 
+      */}
     </main>
   );
 }

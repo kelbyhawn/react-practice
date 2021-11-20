@@ -66,7 +66,7 @@ export default function ShoppingList() {
   }
 
   return (
-    <main>
+    <div className="wrapper">
       <h1>Simple Shopping List</h1>
       <ItemForm
         entry={entry}
@@ -75,7 +75,7 @@ export default function ShoppingList() {
         onFormSubmit={handleFormSubmit}
       />
       <ItemList items={items} onDeleteClick={handleDeleteClick} />
-    </main>
+    </div>
   );
 }
 
