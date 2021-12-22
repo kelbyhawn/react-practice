@@ -3,6 +3,7 @@ import './App.sass';
 import Map from './Map';
 import ShoppingList from './ShoppingList';
 import CatPics from './CatPics';
+import UploadCatPic from './UploadCatPic';
 
 function App() {
   return (
@@ -10,9 +11,10 @@ function App() {
       <ShoppingList />
       <hr />
       <CatPics />
-      {/* 
       <hr />
-      <Map /> 
+      <Map />
+      {/* 
+      <UploadCatPic />
       */}
     </main>
   );
