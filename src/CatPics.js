@@ -1,24 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import Loader from './Loader';
+import useFetch from './useFetch';
 
 export default function CatPics() {
   const [cat, setCat] = useState();
   const [refresh, setRefresh] = useState();
-  const [isLoading, setIsLoading] = useState(false);
+  const { get, isLoading } = useFetch("https://api.thecatapi.com/v1/");
 
   useEffect(() => {
-    fetch("https://api.thecatapi.com/v1/images/search")
-      .then(response => response.json())
-      .then(data => {
-        console.log(data);
-        if (data && !data.error) {
-          setCat(data[0]);
-        }
-      })
-      .catch(error => console.error(error))
-      .finally(() => {
-        setIsLoading(false);
-      });
+    get("images/search").then(data => {
+      if (data) {
+        setCat(data[0]);
+      }
+    }).catch(error => console.error(error));
   }, [refresh]);
 
   if (isLoading) {

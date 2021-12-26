@@ -3,7 +3,8 @@ import './App.sass';
 import Map from './Map';
 import ShoppingList from './ShoppingList';
 import CatPics from './CatPics';
-import UploadCatPic from './UploadCatPic';
+//import UploadCatPic from './UploadCatPic';
+import FavColor from "./FavColor";
 
 function App() {
   return (
@@ -11,6 +12,8 @@ function App() {
       <ShoppingList />
       <hr />
       <CatPics />
+      <hr />
+      <FavColor />
       <hr />
       <Map />
       {/* 
