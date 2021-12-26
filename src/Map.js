@@ -1,5 +1,5 @@
 import React, {useRef, useState, useEffect } from "react";
-import mapboxgl from '!mapbox-gl'; // eslint-disable-line import/no-webpack-loader-syntax
+import mapboxgl from "!mapbox-gl"; // eslint-disable-line import/no-webpack-loader-syntax
 
 mapboxgl.accessToken =
   "pk.eyJ1Ijoia2VsYnloYXduIiwiYSI6ImNrdWxka3pjeDNncnMydW8xNTRjN3k1cnEifQ.aaKSW9JCIOELKE8jd6D0HQ";
@@ -32,11 +32,11 @@ export default function Map() {
 
   return (
     <>
-      <div className='map-wrapper'>
-        <div className='sidebar'>
+      <div className="map-wrapper">
+        <div className="sidebar">
           Longitude: {lng} | Latitude: {lat} | Zoom: {zoom}
         </div>
-        <div ref={mapContainer} className='map-container' />
+        <div ref={mapContainer} className="map-container" />
       </div>
     </>
   );
