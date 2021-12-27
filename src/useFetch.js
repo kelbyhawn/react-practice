@@ -4,6 +4,7 @@ export default function useFetch(baseUrl) {
 
   const [loading, setLoading] = useState(true);
 
+  // GET method - retrieve data from an API
   function get(url) {
     return new Promise((resolve, reject) => {
       fetch(baseUrl + url)
@@ -23,6 +24,7 @@ export default function useFetch(baseUrl) {
     });
   }
 
+  // POST method - send new data to an API
   function post(url, body) {
     return new Promise((resolve, reject) => {
       fetch(baseUrl + url, {
@@ -48,6 +50,7 @@ export default function useFetch(baseUrl) {
     });
   }
 
+  // PUT method - update existing data in an API
   function put(url, body) {
     return new Promise((resolve, reject) => {
       fetch(baseUrl + url, {
@@ -71,7 +74,7 @@ export default function useFetch(baseUrl) {
           reject(error);
         });
     });
-    }
+  }
 
   return { get, post, put, loading };
 }
