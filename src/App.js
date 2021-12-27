@@ -5,6 +5,7 @@ import ShoppingList from "./ShoppingList";
 import CatPics from "./CatPics";
 //import UploadCatPic from "./UploadCatPic";
 import FavColor from "./FavColor";
+import Rain from "./Rain";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <CatPics />
       <hr />
       <FavColor />
+      <Rain />
       <hr />
       <Map />
       {/* 
