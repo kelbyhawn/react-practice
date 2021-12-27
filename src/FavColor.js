@@ -1,29 +1,27 @@
 import React from "react";
 import useFetch from "./useFetch";
 
-export default function Color(props) {
+export default function Color() {
   const [color, setColor] = React.useState("");
   const [success, setSuccess] = React.useState(false);
-  const { post, isLoading } = useFetch(
-    "https://kh-colors-default-rtdb.firebaseio.com/"
-  );
-
-  function handleInputChange(e) {
-    e.preventDefault();
-
-    setColor(e.target.value);
-    setSuccess(false);
-  }
+  const { post, isLoading } = useFetch("https://kh-colors-default-rtdb.firebaseio.com/");
 
   function handleFormSubmit(e) {
     e.preventDefault();
 
     post("colors.json", { favColor: color })
-      .then(data => {
+      .then((data) => {
         console.log(data);
       })
       .catch(error => console.error(error))
       .finally(() => setSuccess(true));
+  }
+  
+  function handleInputChange(e) {
+    e.preventDefault();
+
+    setColor(e.target.value);
+    setSuccess(false);
   }
 
   // return color form
