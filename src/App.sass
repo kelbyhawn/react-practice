@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;500&display=swap')
 
-$color-bg: #282c34
+$color-dark: #282c34
 $color-main: #61dafb
 $color-red: #c92d2d
 $font-main: 'Work Sans', sans-serif
@@ -41,8 +41,8 @@ html,body
   height: 100%
 
 body
-  background: $color-bg
-  color: $color-main
+  background: rgba($color-dark, .1)
+  color: $color-dark
   font-family: $font-main
   font-size: 16px
   text-align: center
@@ -103,6 +103,7 @@ label
   text-align: left
   
 input, select, textarea
+  background: white
   display: block
   width: 100%
   margin-bottom: 1em
@@ -120,7 +121,7 @@ input[type="checkbox"]
 button
   width: 100%
   background: $color-main
-  color: $color-bg
+  color: $color-dark
   font-family: $font-main
   font-size: 1em
   margin: .5em auto 0
@@ -130,6 +131,14 @@ button
   cursor: pointer
   @include transition($hover)
 
+  &.btn-theme
+    width: auto
+    position: absolute
+    right: 1em
+    top: 1em
+    margin-top: 0
+    font-size: .8em
+
   &:hover
     background: white
   
@@ -137,17 +146,19 @@ button
     cursor: default
     background: lightgrey
     color: grey
-  
-  
+
   &.btn-delete
     margin: -2px 0 0 10px
     padding: 0
     background: none
-    color: rgba(white, .5)
+    color: $color-dark
     font-size: 26px
     font-weight: 300
     line-height: 1
     flex-basis: 10%
+
+    &.dark
+      color: rgba(white, .7)
 
     &:hover
       color: $color-red
@@ -158,7 +169,6 @@ ul
   font-weight: 300
   list-style: none
   text-align: left
-  color: white
   
   li
     display: block
@@ -217,7 +227,8 @@ ul
     margin-bottom: 1em
 
 // Rain
-
+.wrapper.rain
+  margin-top: 0
 
 // Loader styles - https://loading.io/css/
 .lds-roller 
@@ -296,3 +307,7 @@ ul
       top: 56px
       left: 12px
 
+// dark mode styles
+.dark
+  background: $color-dark
+  color: $color-main
