@@ -16,7 +16,7 @@ export default function Rain() {
         })
         .catch(error => console.error(error))
     }
-  }, [rain]);
+  }, [put, rain]);
 
   function handleOptionChange(e) {
     e.preventDefault();
