@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;500&display=swap')
 
-$color-dark: #282c34
-$color-main: #61dafb
+// Variables & Mixins ----------------------------  
 $color-red: #c92d2d
 $font-main: 'Work Sans', sans-serif
 $width-sm: 640px
+// Transitions
 $hover: all .2s ease-in-out
-//Animations
+// Animations
 $fade-in: fade-in .5s ease-in
 
 // Animation - loader
@@ -32,6 +32,42 @@ $fade-in: fade-in .5s ease-in
   -ms-transition: $property
   transition: $property
 
+// light theme styles
+@mixin light-theme
+  --text-color: #282c34
+  --bg-color: #fafafa
+  --btn-text-color: #282c34
+  --btn-bg-color: #61dafb
+  --btn-hover-color: #47cbf0
+  --border-color: #c9c9c9
+
+// dark theme styles
+@mixin dark-theme
+  --text-color: #61dafb
+  --bg-color: #282c34
+  --btn-text-color: #282c34
+  --btn-bg-color: #61dafb
+  --btn-hover-color: #47cbf0
+  --border-color: #fafafa
+
+:root
+  @include light-theme
+  
+  // allows toggle to dark theme
+  &.dark
+    @include dark-theme
+
+// Device set to dark theme
+@media (prefers-color-scheme: dark)
+  :root
+    @include dark-theme
+
+  // allows toggle to light theme
+  :root.light
+    @include light-theme
+
+
+// Styles ----------------------------
 *
   margin: 0
   padding: 0
@@ -41,8 +77,8 @@ html,body
   height: 100%
 
 body
-  background: rgba($color-dark, .1)
-  color: $color-dark
+  background: var(--bg-color)
+  color: var(--text-color)
   font-family: $font-main
   font-size: 16px
   text-align: center
@@ -86,12 +122,12 @@ p
     font-size: 14px
 
 a
-  color: $color-main
+  color: var(--text-color)
   
 hr
   width: 100%
   border: 0
-  border-bottom: 1px dashed white
+  border-bottom: 1px dashed var(--border-color)
   margin-bottom: 2em
 
 form
@@ -113,6 +149,7 @@ input, select, textarea
   font-family: $font-main
   font-weight: 300
   font-size: 1em
+  border: 1px solid var(--border-color)
   
 input[type="checkbox"]
   margin: 0 8px 0 0
@@ -120,8 +157,8 @@ input[type="checkbox"]
     
 button
   width: 100%
-  background: $color-main
-  color: $color-dark
+  background: var(--btn-bg-color)
+  color: var(--btn-text-color)
   font-family: $font-main
   font-size: 1em
   margin: .5em auto 0
@@ -140,7 +177,7 @@ button
     font-size: .8em
 
   &:hover
-    background: white
+    background: var(--btn-hover-color)
   
   &:disabled
     cursor: default
@@ -151,14 +188,11 @@ button
     margin: -2px 0 0 10px
     padding: 0
     background: none
-    color: $color-dark
+    color: var(--btn-text-color)
     font-size: 26px
     font-weight: 300
     line-height: 1
     flex-basis: 10%
-
-    &.dark
-      color: rgba(white, .7)
 
     &:hover
       color: $color-red
@@ -174,7 +208,7 @@ ul
     display: block
     margin-bottom: .75em
     padding: 0 .75em .75em .5em
-    border-bottom: 1px dashed rgba(white,.5)
+    border-bottom: 1px dashed var(--border-color)
 
     div
       display: inline-flex
@@ -306,8 +340,3 @@ ul
     &:after 
       top: 56px
       left: 12px
-
-// dark mode styles
-.dark
-  background: $color-dark
-  color: $color-main

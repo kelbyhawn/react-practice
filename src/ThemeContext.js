@@ -15,9 +15,9 @@ function ThemeProvider(props) {
   // change the className on the body tag
   useEffect(() => {
     if (theme === "dark") {
-      document.body.classList.toggle("dark");
+      document.documentElement.classList.toggle("dark");
     } else {
-      document.body.classList.remove("dark");
+      document.documentElement.classList.remove("dark");
     }
   }, [theme]);
 
