@@ -1,6 +1,8 @@
 # react-practice
 Learning React by creating a simple shopping list app (+ other misc things)
 
+https://kh-react-sandbox.netlify.app/
+
 ## Dependencies
 - [React](https://reactjs.org/)
 - [Create React App](https://create-react-app.dev)
