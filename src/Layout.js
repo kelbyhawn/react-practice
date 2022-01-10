@@ -1,16 +1,21 @@
 import { NavLink, Outlet } from "react-router-dom";
 import ThemeButton from "./ThemeButton";
 
+// Layout component shares markup you want to show up on every page
+// - like site logo, <nav>, <main>, <footer>, etc...
 export default function Layout() {
   const year = new Date().getFullYear();
 
   return (
     <>
+      {/* Dark/Light mode button */}
       <ThemeButton />
+
+      {/* Navigation links */}
       <nav>
         <ul>
           <li>
-            <NavLink to="/">Home</NavLink>
+            <NavLink to="/">Shopping List</NavLink>
           </li>
           <li>
             <NavLink to="/cats">Cats</NavLink>
@@ -25,10 +30,11 @@ export default function Layout() {
       </nav>
 
       <main>
+        {/* Outlet renders child components linked above into <main> */}
         <Outlet />
       </main>
       
-
+      {/* Footer */}
       <footer>
         <p>©{year} • Kelby Hawn</p>
       </footer>

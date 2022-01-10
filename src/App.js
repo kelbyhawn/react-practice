@@ -11,7 +11,9 @@ function App() {
   return (
     <>
       <Routes>
+        {/* Nest routes to render inside the Layout component */}
         <Route path="/" element={<Layout />}>
+          {/* add "index" attribute to set the home page */}
           <Route index element={<ShoppingList />} />
           <Route path="cats" element={<CatPics />} />
           <Route path="fetch-examples" element={<FetchExamples />} />
