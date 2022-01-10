@@ -5,6 +5,7 @@ export default function FetchExamples() {
   return (
     <>
       <FavColor />
+      <hr />
       <Rain />
     </>
   )
