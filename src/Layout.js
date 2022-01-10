@@ -8,26 +8,28 @@ export default function Layout() {
 
   return (
     <>
-      {/* Dark/Light mode button */}
-      <ThemeButton />
+      <header>
+        {/* Dark/Light mode button */}
+        <ThemeButton />
 
-      {/* Navigation links */}
-      <nav>
-        <ul>
-          <li>
-            <NavLink to="/">Shopping List</NavLink>
-          </li>
-          <li>
-            <NavLink to="/cats">Cats</NavLink>
-          </li>
-          <li>
-            <NavLink to="/fetch-examples">Fetch Examples</NavLink>
-          </li>
-          <li>
-            <NavLink to="/map">Map</NavLink>
-          </li>
-        </ul>
-      </nav>
+        {/* Navigation links */}
+        <nav>
+          <ul>
+            <li>
+              <NavLink to="/">Shopping List</NavLink>
+            </li>
+            <li>
+              <NavLink to="/cats">Cats</NavLink>
+            </li>
+            <li>
+              <NavLink to="/fetch-examples">Fetch Examples</NavLink>
+            </li>
+            <li>
+              <NavLink to="/map">Map</NavLink>
+            </li>
+          </ul>
+        </nav>
+      </header>
 
       <main>
         {/* Outlet renders child components linked above into <main> */}
