@@ -1,26 +1,16 @@
 import React from "react";
 import { ThemeProvider } from "./ThemeContext";
 import ThemeButton from "./ThemeButton";
-import ShoppingList from "./ShoppingList";
-import CatPics from "./CatPics";
-import FavColor from "./FavColor";
-import Rain from "./Rain";
-import Map from "./Map";
+import ShoppingList from "./routes/ShoppingList";
+import CatPics from "./routes/CatPics";
+import FavColor from "./routes/FavColor";
+import Rain from "./routes/Rain";
+import Map from "./routes/Map";
 
 function App() {
   return (
     <>
       <ThemeButton />
-      <main>
-        <ShoppingList />
-        <hr />
-        <CatPics />
-        <hr />
-        <FavColor />
-        <Rain />
-        <hr />
-        <Map />
-      </main>
     </>
   );
 }

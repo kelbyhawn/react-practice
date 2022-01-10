@@ -1,5 +1,5 @@
 import React from "react";
-import useFetch from "./useFetch";
+import useFetch from "../useFetch";
 
 export default function Color() {
   const [color, setColor] = React.useState("");

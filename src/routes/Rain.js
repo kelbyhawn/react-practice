@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import useFetch from "./useFetch";
-import Loader from "./Loader";
+import useFetch from "../useFetch";
+import Loader from "../Loader";
 
 export default function Rain() {
   const [rain, setRain] = useState("");
