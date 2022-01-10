@@ -1,10 +1,9 @@
 import { useState, useEffect } from "react";
 import useFetch from "../useFetch";
-import Loader from "../Loader";
 
 export default function Rain() {
   const [rain, setRain] = useState("");
-  const { put, isLoading } = useFetch("https://kh-rain-default-rtdb.firebaseio.com/");
+  const { put } = useFetch("https://kh-rain-default-rtdb.firebaseio.com/");
 
   useEffect(() => {
     if (rain) {
@@ -33,8 +32,6 @@ export default function Rain() {
           <option value="true">Yes</option>
           <option value="false">No</option>
         </select>
-
-        {isLoading && <Loader />}
 
         {rain !== "" && (
           <p className="tiny">

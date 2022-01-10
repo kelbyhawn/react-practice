@@ -1,7 +1,6 @@
 import { useState } from "react";
 
 export default function useFetch(baseUrl) {
-
   const [loading, setLoading] = useState(true);
 
   // GET method - retrieve data from an API
