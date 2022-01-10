@@ -1,27 +1,25 @@
 import React from "react";
+import { Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "./ThemeContext";
-import "./App.sass";
-import ThemeButton from "./ThemeButton";
-import ShoppingList from "./ShoppingList";
-import CatPics from "./CatPics";
-import FavColor from "./FavColor";
-import Rain from "./Rain";
-import Map from "./Map";
+import Layout from "./Layout";
+import ShoppingList from "./routes/ShoppingList";
+import CatPics from "./routes/CatPics";
+import FetchExamples from "./routes/FetchExamples";
+import Map from "./routes/Map";
 
 function App() {
   return (
     <>
-      <ThemeButton />
-      <main>
-        <ShoppingList />
-        <hr />
-        <CatPics />
-        <hr />
-        <FavColor />
-        <Rain />
-        <hr />
-        <Map />
-      </main>
+      <Routes>
+        {/* Nest routes to render inside the Layout component */}
+        <Route path="/" element={<Layout />}>
+          {/* add "index" attribute to set the home page */}
+          <Route index element={<ShoppingList />} />
+          <Route path="cats" element={<CatPics />} />
+          <Route path="fetch-examples" element={<FetchExamples />} />
+          <Route path="map" element={<Map />} />
+        </Route>
+      </Routes>
     </>
   );
 }

@@ -83,18 +83,7 @@ body
   font-size: 16px
   text-align: center
   line-height: 1.4
-  
-main
-  height: 100%
-  display: inline-flex
-  justify-content: center
-  align-items: center
-  flex-direction: column
-  width: 600px
 
-.wrapper
-  margin: 5% auto
-  
 h1
   font-size: 2.5em
   font-weight: 500
@@ -130,8 +119,54 @@ hr
   border-bottom: 1px dashed var(--border-color)
   margin-bottom: 2em
 
+header
+  padding: 1.5em
+
+  button.btn-theme
+    width: auto
+    position: absolute
+    right: 1em
+    top: 1em
+    margin-top: 0
+    font-size: .8em
+
+nav ul
+  list-style: none
+  display: flex
+  
+  li
+    margin: 0 .5em
+
+  a
+    font-weight: 300
+    text-decoration: none
+
+    &:hover
+      text-decoration: underline
+
+    &.active 
+      font-weight: 500
+      text-decoration: underline
+
+footer
+  font-size: .75em
+  color: var(--text-color)
+  
+main
+  height: 100%
+  display: inline-flex
+  justify-content: center
+  align-items: center
+  flex-direction: column
+  max-width: 600px
+  margin: 2em auto
+  padding: 0 1em
+
+.wrapper
+  margin: 5% auto
+
 form
-  width: 450px
+  width: 100%
     
 label
   display: block
@@ -140,7 +175,6 @@ label
   
 input, select, textarea
   background: white
-  display: block
   width: 100%
   margin-bottom: 1em
   border: none
@@ -168,14 +202,6 @@ button
   cursor: pointer
   @include transition($hover)
 
-  &.btn-theme
-    width: auto
-    position: absolute
-    right: 1em
-    top: 1em
-    margin-top: 0
-    font-size: .8em
-
   &:hover
     background: var(--btn-hover-color)
   
@@ -197,8 +223,8 @@ button
     &:hover
       color: $color-red
 
-ul
-  width: 450px
+main ul
+  width: 100%
   padding: .5em 0
   font-weight: 300
   list-style: none
@@ -255,7 +281,6 @@ ul
 
 // Fav Color
 .wrapper.favColor,.wrapper.rain
-  margin-bottom: 4em
 
   button
     margin-bottom: 1em

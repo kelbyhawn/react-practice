@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { ThemeContext } from "./ThemeContext";
+import { ThemeContext } from "../ThemeContext";
 import clsx from "clsx";
 
 // returns a list of items added from the ItemForm component

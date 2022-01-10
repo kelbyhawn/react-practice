@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import Loader from "./Loader";
-import useFetch from "./useFetch";
+import Loader from "../Loader";
+import useFetch from "../useFetch";
 
 export default function CatPics() {
   const [cat, setCat] = useState();
