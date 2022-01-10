@@ -1,6 +1,5 @@
 import React from "react";
 import { ThemeProvider } from "./ThemeContext";
-import "./App.sass";
 import ThemeButton from "./ThemeButton";
 import ShoppingList from "./ShoppingList";
 import CatPics from "./CatPics";
