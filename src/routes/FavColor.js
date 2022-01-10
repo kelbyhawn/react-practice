@@ -1,9 +1,9 @@
-import React from "react";
+import {useState} from "react";
 import useFetch from "../useFetch";
 
 export default function Color() {
-  const [color, setColor] = React.useState("");
-  const [success, setSuccess] = React.useState(false);
+  const [color, setColor] = useState("");
+  const [success, setSuccess] = useState(false);
   const { post, isLoading } = useFetch("https://kh-colors-default-rtdb.firebaseio.com/");
 
   function handleFormSubmit(e) {

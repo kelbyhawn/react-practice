@@ -1,16 +1,23 @@
 import React from "react";
+import { Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "./ThemeContext";
-import ThemeButton from "./ThemeButton";
+import Layout from "./Layout";
 import ShoppingList from "./routes/ShoppingList";
 import CatPics from "./routes/CatPics";
-import FavColor from "./routes/FavColor";
-import Rain from "./routes/Rain";
+import FetchExamples from "./routes/FetchExamples";
 import Map from "./routes/Map";
 
 function App() {
   return (
     <>
-      <ThemeButton />
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<ShoppingList />} />
+          <Route path="cats" element={<CatPics />} />
+          <Route path="fetch-examples" element={<FetchExamples />} />
+          <Route path="map" element={<Map />} />
+        </Route>
+      </Routes>
     </>
   );
 }
