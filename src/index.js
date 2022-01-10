@@ -1,7 +1,7 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import ReactDOM from "react-dom";
 import { BrowserRouter } from "react-router-dom"
-import AppWrapper from './App';
+import AppWrapper from "./App";
 import "./App.sass";
 
 ReactDOM.render(
@@ -10,5 +10,5 @@ ReactDOM.render(
       <AppWrapper />
     </BrowserRouter>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.querySelector("#root")
 );
