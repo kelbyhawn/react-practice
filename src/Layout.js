@@ -38,7 +38,7 @@ export default function Layout() {
       
       {/* Footer */}
       <footer>
-        <p>©{year} • Kelby Hawn</p>
+        <p className="tiny">©{year} Kelby Hawn • <a href="https://github.com/kelbyhawn/react-practice" target="_blank" rel="noreferrer">View Source Code on GitHub</a></p>
       </footer>
     </>
   );
