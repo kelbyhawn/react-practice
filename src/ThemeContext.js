@@ -14,10 +14,10 @@ function ThemeProvider(props) {
 
   // change the className on the body tag
   useEffect(() => {
-    if (theme === "dark") {
-      document.documentElement.classList.toggle("dark");
+    if (theme === "light") {
+      document.documentElement.classList.toggle("light");
     } else {
-      document.documentElement.classList.remove("dark");
+      document.documentElement.classList.remove("light");
     }
   }, [theme]);
 

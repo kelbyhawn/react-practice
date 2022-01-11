@@ -51,19 +51,10 @@ $fade-in: fade-in .5s ease-in
   --border-color: #fafafa
 
 :root
-  @include light-theme
+  @include dark-theme
   
-  // allows toggle to dark theme
-  &.dark
-    @include dark-theme
-
-// Device set to dark theme
-@media (prefers-color-scheme: dark)
-  :root
-    @include dark-theme
-
   // allows toggle to light theme
-  :root.light
+  &.light
     @include light-theme
 
 
