@@ -120,7 +120,7 @@ hr
   margin-bottom: 2em
 
 header
-  padding: 1.5em
+  padding: 1.5em 1em
 
   button.btn-theme
     width: auto
@@ -130,23 +130,34 @@ header
     margin-top: 0
     font-size: .8em
 
-nav ul
-  list-style: none
-  display: flex
+    @media screen and (max-width: $width-sm)
+      right: 1.3em
+      top: 6em
+
+nav 
+  border-bottom: 1px solid
+  padding-bottom: 1em
   
-  li
-    margin: 0 .5em
+  ul
+    list-style: none
+    max-width: 400px
+    display: flex
+    justify-content: space-between
 
-  a
-    font-weight: 300
-    text-decoration: none
+    @media screen and (max-width: $width-sm)
+      width: 100%
+      font-size: .9em
 
-    &:hover
-      text-decoration: underline
+    a
+      font-weight: 300
+      text-decoration: none
 
-    &.active 
-      font-weight: 500
-      text-decoration: underline
+      &:hover
+        text-decoration: underline
+
+      &.active 
+        font-weight: 500
+        text-decoration: underline
   
 main
   height: 100%
@@ -155,7 +166,7 @@ main
   align-items: center
   flex-direction: column
   max-width: 600px
-  margin: 2em auto
+  margin: 4em auto
   padding: 0 1em
 
 .wrapper
@@ -248,6 +259,9 @@ main ul
   width: 600px
   margin: 2em auto
 
+  @media screen and (max-width: $width-sm)
+    width: 330px
+
 .map-container 
   height: 400px
 
@@ -277,6 +291,7 @@ main ul
 
 // Fav Color
 .wrapper.favColor,.wrapper.rain
+  width: 100%
 
   button
     margin-bottom: 1em
