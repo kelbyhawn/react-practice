@@ -1,7 +1,7 @@
 # react-practice
 Learning React by creating a simple app including:
 - Shopping list
-- Cat pics generator (!!)
+- Cat pics generator (😺)
 - Fetch examples
 - Mapbox map
 
