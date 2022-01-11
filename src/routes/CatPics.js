@@ -28,6 +28,7 @@ export default function CatPics() {
 
   return (
     <>
+      <h1>Cats!</h1>
       <div className="wrapper cat">
         <img src={cat.url} alt="A random cat" />
 

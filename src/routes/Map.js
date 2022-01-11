@@ -33,6 +33,7 @@ export default function Map() {
 
   return (
     <>
+      <h1>Mapbox Map</h1>
       <div className="map-wrapper">
         <div className="sidebar">
           Longitude: {lng} | Latitude: {lat} | Zoom: {zoom}
