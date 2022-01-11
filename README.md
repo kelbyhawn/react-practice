@@ -1,5 +1,9 @@
 # react-practice
-Learning React by creating a simple shopping list app (+ other misc things)
+Learning React by creating a simple app including:
+- Shopping list
+- Cat pics generator (!!)
+- Fetch examples
+- Mapbox map
 
 [kh-react-sandbox.netlify.app](https://kh-react-sandbox.netlify.app/)
 
