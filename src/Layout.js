@@ -1,4 +1,4 @@
-import { NavLink, Outlet } from "react-router-dom";
+import { Link, NavLink, Outlet } from "react-router-dom";
 import ThemeButton from "./ThemeButton";
 
 // Layout component shares markup you want to show up on every page
@@ -38,7 +38,7 @@ export default function Layout() {
       
       {/* Footer */}
       <footer>
-        <p>©{year} • Kelby Hawn</p>
+        <p>©{year} Kelby Hawn • <a href="https://github.com/kelbyhawn/react-practice" target="_blank" rel="noreferrer">View Source Code on GitHub</a></p>
       </footer>
     </>
   );
