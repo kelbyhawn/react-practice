@@ -1,5 +1,5 @@
 # react-practice
-Learning React by creating a simple app including:
+Learning React by creating an app including:
 - Shopping list
 - Cat pics generator (😺)
 - Fetch examples
