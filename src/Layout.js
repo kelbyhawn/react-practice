@@ -1,4 +1,4 @@
-import { Link, NavLink, Outlet } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 import ThemeButton from "./ThemeButton";
 
 // Layout component shares markup you want to show up on every page
