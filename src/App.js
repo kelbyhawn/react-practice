@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "./ThemeContext";
 import Layout from "./Layout";
 import ShoppingList from "./routes/ShoppingList";
@@ -31,11 +31,11 @@ function App() {
 // - this prevents bugs when Context needs to be called in the App component (it's not currently being used, but just in case)
 function AppWrapper() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <ThemeProvider>
         <App />
       </ThemeProvider>
-    </BrowserRouter>  
+    </HashRouter>  
   )
 }
 
