@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "./ThemeContext";
 import Layout from "./Layout";
 import ShoppingList from "./routes/ShoppingList";
@@ -28,12 +28,14 @@ function App() {
 }
 
 // an App Wrapper allows for the App component to be used in the ThemeProvider
-// - this prevents bugs when Context needs to be called in the App component (it's not currenty being used, but just in case)
+// - this prevents bugs when Context needs to be called in the App component (it's not currently being used, but just in case)
 function AppWrapper() {
   return (
-    <ThemeProvider>
-      <App />
-    </ThemeProvider>
+    <BrowserRouter>
+      <ThemeProvider>
+        <App />
+      </ThemeProvider>
+    </BrowserRouter>  
   )
 }
 
