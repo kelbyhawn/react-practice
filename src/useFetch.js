@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 export default function useFetch(baseUrl) {
-  const [loading, setLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
 
   // GET method - retrieve data from an API
   function get(url) {
@@ -10,14 +10,14 @@ export default function useFetch(baseUrl) {
         .then((response) => response.json())
         .then((data) => {
           if (!data) {
-            setLoading(false);
+            setIsLoading(false);
             return reject(data);
           }
-          setLoading(false);
+          setIsLoading(false);
           resolve(data);
         })
         .catch((error) => {
-          setLoading(false);
+          setIsLoading(false);
           reject(error);
         });
     });
@@ -36,14 +36,14 @@ export default function useFetch(baseUrl) {
         .then((response) => response.json())
         .then((data) => {
           if (!data) {
-            setLoading(false);
+            setIsLoading(false);
             return reject(data);
           }
-          setLoading(false);
+          setIsLoading(false);
           resolve(data);
         })
         .catch((error) => {
-          setLoading(false);
+          setIsLoading(false);
           reject(error);
         });
     });
@@ -62,18 +62,18 @@ export default function useFetch(baseUrl) {
         .then((response) => response.json())
         .then((data) => {
           if (!data) {
-            setLoading(false);
+            setIsLoading(false);
             return reject(data);
           }
-          setLoading(false);
+          setIsLoading(false);
           resolve(data);
         })
         .catch((error) => {
-          setLoading(false);
+          setIsLoading(false);
           reject(error);
         });
     });
   }
 
-  return { get, post, put, loading };
+  return { get, post, put, isLoading, setIsLoading };
 }
