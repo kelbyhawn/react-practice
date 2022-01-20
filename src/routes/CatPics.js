@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Loader from "../Loader";
 import useFetch from "../useFetch";
+import Button from "../ui-kit/Button";
 
 export default function CatPics() {
   const [cat, setCat] = useState();
@@ -38,9 +39,11 @@ export default function CatPics() {
           </p>
         )}
 
-        <button onClick={() => setRefresh([])} disabled={isLoading}>
-          Purrress for a new cat
-        </button>
+        <Button
+          onClick={() => setRefresh([])}
+          disabled={isLoading}
+          children={"Purrress for a new cat"} 
+        />
 
         <p className="tiny">
           Photos from{" "}

@@ -21,7 +21,7 @@ export default function ShoppingList() {
     inputRef.current.focus();
   }, []);
 
-  // udpdate the title w/ the useEffect hook each time an item is added to the list
+  // update the title w/ the useEffect hook each time an item is added to the list
   // always put useEffect hook at the top of the component to avoid errors
   // never call hooks in loops, conditions, or nested functions
   useEffect(() => {

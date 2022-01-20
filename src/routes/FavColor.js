@@ -1,5 +1,6 @@
 import {useState} from "react";
 import useFetch from "../useFetch";
+import Button from "../ui-kit/Button";
 
 export default function Color() {
   const [color, setColor] = useState("");
@@ -38,9 +39,11 @@ export default function Color() {
             value={color}
             onChange={handleInputChange}
           />
-          <button type="submit" disabled={!color}>
-            {isLoading ? 'Loading...' : 'Add color to database'}
-          </button>
+          <Button
+            type="submit"
+            disabled={!color}
+            children={isLoading ? 'Loading...' : 'Add color to database'} 
+          />
         </form>
 
         {/* show Success message after submitting a color */}
