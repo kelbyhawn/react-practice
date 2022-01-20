@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;500&display=swap')
 
 // Variables & Mixins ----------------------------  
-$color-red: #c92d2d
+$color-red: #fc6b6b
 $font-main: 'Work Sans', sans-serif
 $width-sm: 640px
 // Transitions
@@ -93,12 +93,6 @@ p
   &:first-of-type
     margin-bottom: .5em
 
-  &.error-msg
-    color: $color-red
-    font-weight: 500
-    font-size: 1em
-    margin-top: 1em
-
   &.tiny
     font-size: 0.875em
 
@@ -165,13 +159,15 @@ main
 
 form
   width: 100%
-    
+
+  p.required 
+    color: $color-red
+    text-align: left
+    margin: -0.75em 0 1em 0
+        
 label
   display: block
   text-align: left
-
-.required
-  color: red
   
 input, select, textarea
   background: white
@@ -195,7 +191,7 @@ button
   color: var(--btn-text-color)
   font-family: $font-main
   font-size: 1em
-  margin: .5em auto 0
+  margin: .5em auto 1em
   padding: .75em 1em
   border: none
   border-radius: 4px
@@ -288,9 +284,6 @@ main ul
 // Fav Color
 .wrapper.favColor,.wrapper.rain
   width: 100%
-
-  button
-    margin-bottom: 1em
 
 // Rain
 .wrapper.rain
