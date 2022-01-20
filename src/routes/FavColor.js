@@ -32,7 +32,7 @@ export default function Color() {
       <div className="wrapper favColor">
         <form onSubmit={handleFormSubmit}>
           <Input 
-            children={"What's your favorite color?"}
+            label={"What's your favorite color?"}
             value={color}
             onChange={handleInputChange}
             autoFocus
