@@ -1,18 +1,26 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import Button from "../ui-kit/Button";
 import { useForm } from "react-hook-form";
 
 export default function Form() {
+  const [btnCopy, setBtnCopy] = useState("Submit Form");
   const { register, formState: {errors}, handleSubmit } = useForm();
-  const onSubmit = (data, e) => {
-    console.log(data);
-    e.target.reset();
-  }
 
   useEffect(() => {
     // Set document title based on component
     document.title = "Basic Form";
   })
+
+  function onSubmit(data, e) {
+    console.log(data);
+    e.target.reset();
+    // change button copy on submit
+    setBtnCopy("Thanks!");
+    // set button copy back
+    setTimeout(() => {
+      setBtnCopy("Submit Form");
+    }, 1500)
+  }
   
   return (
     <>
@@ -46,7 +54,7 @@ export default function Form() {
         </label>
         {errors.gender?.type === 'required' && <p className="tiny required">Gender is required</p>}
 
-        <Button children={"Submit Form"} />
+        <Button children={btnCopy} />
       </form>
 
       <p className="tiny">
