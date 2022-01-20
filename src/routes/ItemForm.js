@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "../ui-kit/Button";
 
 export default function ItemForm(props) {
   return (
@@ -12,7 +13,7 @@ export default function ItemForm(props) {
         value={props.entry} // uses entry state from App
         onChange={props.onEntryChange} // uses setEntry state from App
       />
-      <button>Add Item</button>
+      <Button children={"Add Item"} />
       <p className="error-msg">{props.validation}</p>
     </form>
   );
