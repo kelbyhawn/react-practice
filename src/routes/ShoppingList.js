@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import ItemForm from "./ItemForm.js";
 import ItemList from "./ItemList.js";
 
@@ -14,12 +14,7 @@ export default function ShoppingList() {
   }); // start w/ empty array
   const [entry, setEntry] = useState(""); // start w/ empty input
   const [validation, setValidation] = useState(""); // start w/ empty p
-  const inputRef = useRef();
 
-  // use refs to focus on input on page load
-  useEffect(() => {
-    inputRef.current.focus();
-  }, []);
 
   // update the title w/ the useEffect hook each time an item is added to the list
   // always put useEffect hook at the top of the component to avoid errors
@@ -75,7 +70,6 @@ export default function ShoppingList() {
     <div className="wrapper">
       <h1>Simple Shopping List</h1>
       <ItemForm
-        inputRef={inputRef}
         entry={entry}
         validation={validation}
         onEntryChange={handleEntryChange}

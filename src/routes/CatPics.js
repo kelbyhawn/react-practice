@@ -9,6 +9,9 @@ export default function CatPics() {
   const { get, isLoading } = useFetch("https://api.thecatapi.com/v1/");
 
   useEffect(() => {
+    // Set document title based on component
+    document.title = "Cats";
+
     get("images/search")
       .then((data) => {
         if (data) {

@@ -13,6 +13,9 @@ export default function Map() {
   const [zoom, setZoom] = useState(9);
 
   useEffect(() => {
+    // Set document title based on component
+    document.title = "Map";
+
     if (map.current) return; // initialize map only once
     map.current = new mapboxgl.Map({
       container: mapContainer.current,

@@ -1,11 +1,12 @@
 import {useState} from "react";
 import useFetch from "../useFetch";
 import Button from "../ui-kit/Button";
+import Input from "../ui-kit/Input";
 
 export default function Color() {
   const [color, setColor] = useState("");
   const [success, setSuccess] = useState(false);
-  const { post, isLoading } = useFetch("https://kh-colors-default-rtdb.firebaseio.com/");
+  const { post } = useFetch("https://kh-colors-default-rtdb.firebaseio.com/");
 
   function handleFormSubmit(e) {
     e.preventDefault();
@@ -30,19 +31,16 @@ export default function Color() {
     <>
       <div className="wrapper favColor">
         <form onSubmit={handleFormSubmit}>
-          <label htmlFor="color">What's your favorite color?</label>
-          {/* use color state to get input value */}
-          <input
-            type="text"
-            id="color"
-            name="color"
+          <Input 
+            children={"What's your favorite color?"}
             value={color}
             onChange={handleInputChange}
+            autoFocus
           />
           <Button
             type="submit"
             disabled={!color}
-            children={isLoading ? 'Loading...' : 'Add color to database'} 
+            children={'Add color to database'} 
           />
         </form>
 
