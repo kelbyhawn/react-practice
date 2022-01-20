@@ -1,16 +1,10 @@
-import React, { useContext } from "react";
-import { ThemeContext } from "../ThemeContext";
-import clsx from "clsx";
+import React from "react";
+import Button from "../ui-kit/Button";
+
 
 // returns a list of items added from the ItemForm component
 // use props to call corresponding state value in parent component
 export default function ItemList(props) {
-  const context = useContext(ThemeContext);
-  const classes = clsx({
-    "dark": context.theme === "dark",
-    "btn-delete": true
-  });
-
   return (
     <ul>
       {/* set props on items state and create array from items added in ItemForm */}
@@ -23,13 +17,13 @@ export default function ItemList(props) {
               name={item.entry} 
               value={item.entry}
             />
-            <label htmlFor={item.entry}>{item.entry}</label>  
-            <button
-              className={classes}
-              onClick={() => props.onDeleteClick(item.id)} // set props to call handleDeleteClick function 
-            >
-              &#215;
-            </button>
+            <label htmlFor={item.entry}>{item.entry}</label> 
+            
+            <Button
+              className="btn-delete"
+              onClick={() => props.onDeleteClick(item.id)} 
+              children="×"
+            />
           </div>
         </li>
       ))}

@@ -1,6 +1,7 @@
 import {useState} from "react";
 import useFetch from "../useFetch";
 import Button from "../ui-kit/Button";
+import Input from "../ui-kit/Input";
 
 export default function Color() {
   const [color, setColor] = useState("");
@@ -30,14 +31,11 @@ export default function Color() {
     <>
       <div className="wrapper favColor">
         <form onSubmit={handleFormSubmit}>
-          <label htmlFor="color">What's your favorite color?</label>
-          {/* use color state to get input value */}
-          <input
-            type="text"
-            id="color"
-            name="color"
+          <Input 
+            children={"What's your favorite color?"}
             value={color}
             onChange={handleInputChange}
+            autoFocus
           />
           <Button
             type="submit"
