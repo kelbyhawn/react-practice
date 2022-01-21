@@ -24,9 +24,15 @@ export default function Form() {
   
   return (
     <>
-      <h1>Basic Form</h1>
+      <h1 style={{marginBottom: "0"}}>Basic Form</h1>
+      <p className="tiny">
+        Form created using{" "}
+        <a href="https://react-hook-form.com/" target="_blank" rel="noreferrer">
+          React Hook Form
+        </a>
+      </p>
 
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form onSubmit={handleSubmit(onSubmit)} style={{marginTop: "2em"}}>
         <label>First Name*
           <input {...register("firstName", {required: true, minLength: 2})} />
         </label>
@@ -56,13 +62,6 @@ export default function Form() {
 
         <Button children={btnCopy} />
       </form>
-
-      <p className="tiny">
-        Form created using{" "}
-        <a href="https://react-hook-form.com/" target="_blank" rel="noreferrer">
-          React Hook Form
-        </a>
-      </p>
     </>
   )
 }
