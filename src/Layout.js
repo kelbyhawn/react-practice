@@ -22,10 +22,13 @@ export default function Layout() {
               <NavLink to="/cats">Cats</NavLink>
             </li>
             <li>
-              <NavLink to="/fetch-examples">Fetch Examples</NavLink>
+              <NavLink to="/fetch-examples">Fetch</NavLink>
             </li>
             <li>
               <NavLink to="/map">Map</NavLink>
+            </li>
+            <li>
+              <NavLink to="/form">Form</NavLink>
             </li>
           </ul>
         </nav>

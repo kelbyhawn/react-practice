@@ -6,6 +6,7 @@ import ShoppingList from "./routes/ShoppingList";
 import CatPics from "./routes/CatPics";
 import FetchExamples from "./routes/FetchExamples";
 import Map from "./routes/Map";
+import Form from "./routes/Form";
 import NotFound from "./routes/NotFound";
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
           <Route path="cats" element={<CatPics />} />
           <Route path="fetch-examples" element={<FetchExamples />} />
           <Route path="map" element={<Map />} />
+          <Route path="form" element={<Form />} />
           {/* handle 404 not found */}
           <Route path="*" element={<NotFound />} />
         </Route>
