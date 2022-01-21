@@ -15,7 +15,7 @@ export default function Form() {
     console.log(data);
     e.target.reset();
     // change button copy on submit
-    setBtnCopy("Thanks!");
+    setBtnCopy("Success!");
     // set button copy back
     setTimeout(() => {
       setBtnCopy("Submit Form");
@@ -62,6 +62,7 @@ export default function Form() {
 
         <Button children={btnCopy} />
       </form>
+      <p className="tiny">Check the console to see inputted data.</p>
     </>
   )
 }
