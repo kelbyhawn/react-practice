@@ -35,7 +35,6 @@ export default function Color() {
             label={"What's your favorite color?"}
             value={color}
             onChange={handleInputChange}
-            autoFocus
           />
           <Button
             type="submit"

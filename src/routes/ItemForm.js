@@ -9,7 +9,7 @@ export default function ItemForm(props) {
         label={"Enter an item:"}
         value={props.entry} // uses entry state from App
         onChange={props.onEntryChange} // uses setEntry state from App
-        autoFocus
+        autoFocus={(window.screen.width <= 480) ? false : true }
       />
       <p className="tiny required">{props.validation}</p>
       
