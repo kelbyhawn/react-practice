@@ -1,14 +1,14 @@
 # react-practice
 Learning React with a mix of components and dependencies.
 
+[kh-react-sandbox.netlify.app](https://kh-react-sandbox.netlify.app/)
+
 Includes:
 - Shopping list
 - Cat pics generator (😺)
 - Fetch examples
 - Mapbox map
 - Basic form
-
-[kh-react-sandbox.netlify.app](https://kh-react-sandbox.netlify.app/)
 
 ## Dependencies
 - [React](https://reactjs.org/)
