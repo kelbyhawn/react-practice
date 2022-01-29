@@ -14,10 +14,10 @@ Includes:
 - Basic form
 
 ## Dependencies
-- [React](https://reactjs.org/)
-- [Create React App](https://create-react-app.dev)
-- [React Router](https://reactrouterdotcom.fly.dev/)
-- [Sass](https://sass-lang.com/)
-- [clsx](https://www.npmjs.com/package/clsx)
-- [Mapbox](https://www.mapbox.com/)
-- [React Hook Form](https://react-hook-form.com/)
+- [React](https://reactjs.org/) - A declarative, efficient, and flexible JavaScript library for building user interfaces. 
+- [Create React App](https://create-react-app.dev) - Set up a modern web app by running one command. 
+- [React Router](https://www.npmjs.com/package/react-router) - Declarative routing for React
+- [Sass](https://www.npmjs.com/package/sass) - CSS with superpowers.
+- [clsx](https://www.npmjs.com/package/clsx) - A tiny (228B) utility for constructing `className` strings conditionally. 
+- [Mapbox GL JS](https://github.com/mapbox/mapbox-gl-js) - Interactive, thoroughly customizable maps in the browser
+- [React Hook Form](https://github.com/react-hook-form/react-hook-form) - 📋 React Hooks for form state management and validation (Web + React Native) 
