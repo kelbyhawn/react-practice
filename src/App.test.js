@@ -7,7 +7,5 @@ test("renders without crashing", () => {
   ReactDOM.render(<App />, div);
 });
 
-// Resolves mapbox-gl issue
-jest.mock('mapbox-gl/dist/mapbox-gl', () => ({
-  Map: () => ({})
-}));
+// Mapbox mock
+jest.mock("./routes/Map.js", () => () => <></>);
