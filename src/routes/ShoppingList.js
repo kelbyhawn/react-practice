@@ -75,7 +75,10 @@ export default function ShoppingList() {
         onEntryChange={handleEntryChange}
         onFormSubmit={handleFormSubmit}
       />
-      <ItemList items={items} onDeleteClick={handleDeleteClick} />
+      <ItemList
+        items={items}
+        onDeleteClick={handleDeleteClick} 
+      />
     </div>
   );
 }
