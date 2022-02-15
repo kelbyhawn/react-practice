@@ -49,16 +49,22 @@ export default function Form() {
         {errors.zipCode?.type === 'required' && <p className="tiny required">ZIP Code is required</p>}
 
         <label>
-          Gender*
-          <select {...register("gender", {required: true})}>
+          Choose an animal:
+          <select {...register("animal")}>
             <option value="">Select One</option>
-            <option value="woman">Woman</option>
-            <option value="man">Man</option>
-            <option value="nonBinary">Non-binary</option>
-            <option value="decline">Prefer not to say</option>
+            <option value="dog">Dog</option>
+            <option value="cat">Cat</option>
+            <option value="rabbit">Rabbit</option>
+            <option value="koala">Koala</option>
+            <option value="flamingo">Flamingo</option>
+            <option value="other">Other</option>
           </select>
         </label>
-        {errors.gender?.type === 'required' && <p className="tiny required">Gender is required</p>}
+
+        <label>
+          Tell a short story:
+          <textarea {...register("story")}></textarea>
+        </label>
 
         <Button children={btnCopy} />
       </form>

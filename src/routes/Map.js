@@ -50,12 +50,12 @@ export default function Map() {
     <>
       <h1>Mapbox Map</h1>
       <form>
-        <label htmlFor='landmarks'>Choose a landmark: </label>
-        <select id='landmarks' onChange={handleDropdownChange}>
+        <label htmlFor="landmarks">Choose a landmark: </label>
+        <select id="landmarks" onChange={handleDropdownChange}>
           <option value="center">Select one</option>
-          <option value='spaceneedle'>Space Needle</option>
-          <option value='troll'>The Fremont Troll</option>
-          <option value='pikeplace'>Pike Place Market</option>
+          <option value="spaceneedle">Space Needle</option>
+          <option value="troll">The Fremont Troll</option>
+          <option value="pikeplace">Pike Place Market</option>
         </select>
       </form>
       <div className="map-wrapper">
