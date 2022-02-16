@@ -3,6 +3,8 @@ import ItemForm from "./ItemForm.js";
 import ItemList from "./ItemList.js";
 
 export default function ShoppingList() {
+  const [newItem, setNewItem] = useState(""); // start w/ empty input
+  const [validation, setValidation] = useState(""); // start w/ empty p
   // Lazy initial state; return the value from localStorage w/ .getItem() method
   const [items, setItems] = useState(() => {
     const listItems = localStorage.getItem("items");
@@ -10,10 +12,8 @@ export default function ShoppingList() {
       // parse items array when retrieving
       return JSON.parse(listItems);
     }
-    return [];
-  }); // start w/ empty array
-  const [entry, setEntry] = useState(""); // start w/ empty input
-  const [validation, setValidation] = useState(""); // start w/ empty p
+    return []; // start w/ empty array
+  }); 
 
 
   // update the title w/ the useEffect hook each time an item is added to the list
@@ -37,7 +37,7 @@ export default function ShoppingList() {
     e.preventDefault();
 
     // if entry input is empty show validation message
-    if (!entry) {
+    if (!newItem) {
       setValidation("Please enter an item");
       return;
     }
@@ -46,37 +46,48 @@ export default function ShoppingList() {
     setItems([
       ...items,
       {
-        id: items.length + 1, // set an id (this will change with APIs)
-        entry: entry, // set entry props from entry state
-      },
+        id: items.length + 1,
+        item: newItem, // set newItem props from newItem state
+        isChecked: false,
+      }
     ]);
 
     // clear entry form in ItemForm component
-    setEntry("");
+    setNewItem("");
     setValidation("");
   }
 
-  function handleEntryChange(e) {
-    // save each entry added in the ItemForm component
-    setEntry(e.target.value);
+  // set new item name
+  function handleItemChange(e) {
+    // save each item added in the ItemForm component
+    setNewItem(e.target.value);
   }
 
+  // check off an item
+  function handleCheckedClick(index) {
+    let itemsList = [...items];
+    itemsList[index].isChecked = !itemsList[index].isChecked;
+    setItems([...itemsList]);
+  }
+
+  // delete an item
   function handleDeleteClick(id) {
     // delete the entry that matches item.id
-    setItems(items.filter((item) => item.id !== id));
+    setItems(items.filter(item => item.id !== id));
   }
 
   return (
     <div className="wrapper">
       <h1>Simple Shopping List</h1>
       <ItemForm
-        entry={entry}
+        newItem={newItem}
         validation={validation}
-        onEntryChange={handleEntryChange}
+        onItemChange={handleItemChange}
         onFormSubmit={handleFormSubmit}
       />
       <ItemList
         items={items}
+        onCheckedClick={handleCheckedClick}
         onDeleteClick={handleDeleteClick} 
       />
     </div>
