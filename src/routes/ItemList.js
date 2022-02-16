@@ -11,7 +11,7 @@ export default function ItemList(props) {
     <ul>
       {/* set props on items state and create array from items added in ItemForm */}
       {items.map((item, index) => (
-        <li key={item + index}> {/* call object key "id" from setItems array in ShoppingList */}
+        <li key={item.id}> {/* call object key "id" from setItems array in ShoppingList */}
           <div>
             <Button
               className={item.isChecked ? "item checked" : "item"}
