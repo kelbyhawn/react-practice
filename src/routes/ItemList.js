@@ -15,8 +15,9 @@ export default function ItemList(props) {
           <div>
             <Button
               className={item.isChecked ? "item checked" : "item"}
-              onClick={() => onCheckedClick(index)}>
-              <span>{item.isChecked ? "☑" : "☐"}</span> {item.item}
+              onClick={() => onCheckedClick(index)}
+            >
+              {item.item}
             </Button>
             <Button
               className="btn-delete"
