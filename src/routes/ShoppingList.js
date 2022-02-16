@@ -77,7 +77,7 @@ export default function ShoppingList() {
   }
 
   return (
-    <div className="wrapper">
+    <div className="wrapper list">
       <h1>Simple Shopping List</h1>
       <ItemForm
         newItem={newItem}
