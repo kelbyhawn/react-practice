@@ -38,7 +38,7 @@ export default function ShoppingList() {
 
     // if entry input is empty show validation message
     if (!newItem) {
-      setValidation("Please enter an item");
+      setValidation("Please enter an item.");
       return;
     }
 
