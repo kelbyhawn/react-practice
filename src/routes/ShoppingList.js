@@ -48,7 +48,7 @@ export default function ShoppingList() {
       {
         id: items.length + 1,
         item: newItem, // set newItem props from newItem state
-        isChecked: false,
+        isComplete: false,
       }
     ]);
 
@@ -64,10 +64,11 @@ export default function ShoppingList() {
   }
 
   // check off an item
-  function handleCheckedClick(index) {
-    let itemsList = [...items];
-    itemsList[index].isChecked = !itemsList[index].isChecked;
-    setItems([...itemsList]);
+  function handleCompleteClick(index) {
+    setItems(
+      [...items], // make a copy of the items array
+      items[index].isComplete = !items[index].isComplete // change the value of isComplete key
+    );
   }
 
   // delete an item
@@ -87,7 +88,7 @@ export default function ShoppingList() {
       />
       <ItemList
         items={items}
-        onCheckedClick={handleCheckedClick}
+        onCompleteClick={handleCompleteClick}
         onDeleteClick={handleDeleteClick} 
       />
     </div>

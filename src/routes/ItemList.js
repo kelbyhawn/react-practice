@@ -5,7 +5,7 @@ import Button from "../ui-kit/Button";
 // use props to call corresponding state value in parent component
 export default function ItemList(props) {
 
-  const { items, onCheckedClick, onDeleteClick } = props;
+  const { items, onCompleteClick, onDeleteClick } = props;
 
   return (
     <ul>
@@ -14,8 +14,8 @@ export default function ItemList(props) {
         <li key={item.id}> {/* call object key "id" from setItems array in ShoppingList */}
           <div>
             <Button
-              className={item.isChecked ? "item checked" : "item"}
-              onClick={() => onCheckedClick(index)}
+              className={item.isComplete ? "item complete" : "item"}
+              onClick={() => onCompleteClick(index)}
             >
               {item.item}
             </Button>
