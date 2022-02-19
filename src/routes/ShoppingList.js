@@ -63,7 +63,7 @@ export default function ShoppingList() {
     setNewItem(e.target.value);
   }
 
-  // check off an item
+  // complete an item
   function handleCompleteClick(index) {
     setItems(
       [...items], // make a copy of the items array
