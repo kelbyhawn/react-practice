@@ -35,7 +35,7 @@ export default function Map() {
   const landmarks = {
     center: [-122.33207, 47.60621],
     spaceneedle: [-122.349358, 47.620422],
-    troll: [-122.34998, 47.656658],
+    troll: [-122.34728, 47.650955],
     pikeplace: [-122.342148, 47.609631],
   };
 
