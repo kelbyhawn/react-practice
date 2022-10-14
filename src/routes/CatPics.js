@@ -36,16 +36,16 @@ export default function CatPics() {
       <div className="wrapper cat">
         <img src={cat.url} alt="A random cat" />
 
-        {cat.breeds[0] && (
+        {cat.breeds && (
           <p className="tiny">
-            <strong>Cat breed:</strong> {cat.breeds[0].name}
+            <strong>Cat breed:</strong> {cat.breeds.name}
           </p>
         )}
 
         <Button
           onClick={() => setRefresh([])}
           disabled={isLoading}
-          children={"Purrress for a new cat"} 
+          children={"Purrress for a new cat"}
         />
 
         <p className="tiny">
