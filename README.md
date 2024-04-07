@@ -9,7 +9,7 @@ Learning React with a mix of components and dependencies.
 Includes:
 - Shopping list
 - Cat pics generator (😺)
-- Fetch examples
+- Fetch example
 - Mapbox map
 - Basic form
 
