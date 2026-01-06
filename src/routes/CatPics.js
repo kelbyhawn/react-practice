@@ -23,7 +23,7 @@ export default function CatPics() {
   }, [refresh]);
 
   if (isLoading) {
-    return <Loader />
+    return <Loader />;
   }
 
   if (!cat) {
@@ -34,7 +34,9 @@ export default function CatPics() {
     <>
       <h1>Cats!</h1>
       <div className="wrapper cat">
-        <img src={cat.url} alt="A random cat" />
+        <figure>
+          <img src={cat.url} alt="A random cat" />
+        </figure>
 
         {cat.breeds && (
           <p className="tiny">
@@ -57,5 +59,4 @@ export default function CatPics() {
       </div>
     </>
   );
-
 }
