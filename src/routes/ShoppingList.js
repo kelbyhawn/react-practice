@@ -13,8 +13,7 @@ export default function ShoppingList() {
       return JSON.parse(listItems);
     }
     return []; // start w/ empty array
-  }); 
-
+  });
 
   // update the title w/ the useEffect hook each time an item is added to the list
   // always put useEffect hook at the top of the component to avoid errors
@@ -49,7 +48,7 @@ export default function ShoppingList() {
         id: items.length + 1,
         item: newItem, // set newItem props from newItem state
         isComplete: false,
-      }
+      },
     ]);
 
     // clear entry form in ItemForm component
@@ -67,14 +66,14 @@ export default function ShoppingList() {
   function handleCompleteClick(index) {
     setItems(
       [...items], // make a copy of the items array
-      items[index].isComplete = !items[index].isComplete // change the value of isComplete key
+      (items[index].isComplete = !items[index].isComplete), // change the value of isComplete key
     );
   }
 
   // delete an item
   function handleDeleteClick(id) {
     // delete the entry that matches item.id
-    setItems(items.filter(item => item.id !== id));
+    setItems(items.filter((item) => item.id !== id));
   }
 
   return (
@@ -89,9 +88,8 @@ export default function ShoppingList() {
       <ItemList
         items={items}
         onCompleteClick={handleCompleteClick}
-        onDeleteClick={handleDeleteClick} 
+        onDeleteClick={handleDeleteClick}
       />
     </div>
   );
 }
-

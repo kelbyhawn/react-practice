@@ -1,4 +1,4 @@
-import React, {useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import mapboxgl from "!mapbox-gl"; // eslint-disable-line import/no-webpack-loader-syntax
 import "mapbox-gl/dist/mapbox-gl.css";
 
@@ -22,7 +22,7 @@ export default function Map() {
 
     // create marker
     const marker = new mapboxgl.Marker({
-      color: "#000000" // customize color
+      color: "#000000", // customize color
     })
       .setLngLat([-122.33207, 47.60621]) // set default marker position in center of map
       .addTo(map); // adds to map

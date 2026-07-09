@@ -21,7 +21,7 @@ function ThemeProvider(props) {
     }
   }, [theme]);
 
-  // create a method that allows for changing the theme  
+  // create a method that allows for changing the theme
   function toggleTheme() {
     if (theme === "dark") {
       setTheme("light");
@@ -33,17 +33,17 @@ function ThemeProvider(props) {
   // create an object that contains the "theme" state and "toggleTheme" method
   const value = {
     theme: theme,
-    toggleTheme: toggleTheme
-  }
+    toggleTheme: toggleTheme,
+  };
 
-  // return the Context Provider 
+  // return the Context Provider
   // - return the value object above with the value attribute
   return (
     <ThemeContext.Provider value={value}>
       {props.children}
     </ThemeContext.Provider>
   );
-};
+}
 
 // export the ThemeContext and ThemeProvider for use throughout the App
-export { ThemeContext, ThemeProvider }; 
+export { ThemeContext, ThemeProvider };

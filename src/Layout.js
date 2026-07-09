@@ -38,10 +38,19 @@ export default function Layout() {
         {/* Outlet renders child components linked above into <main> */}
         <Outlet />
       </main>
-      
+
       {/* Footer */}
       <footer>
-        <p className="tiny">©{year} Kelby Hawn • <a href="https://github.com/kelbyhawn/react-practice" target="_blank" rel="noreferrer">View source on GitHub</a></p>
+        <p className="tiny">
+          ©{year} Kelby Hawn •{" "}
+          <a
+            href="https://github.com/kelbyhawn/react-practice"
+            target="_blank"
+            rel="noreferrer"
+          >
+            View source on GitHub
+          </a>
+        </p>
       </footer>
     </>
   );
