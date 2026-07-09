@@ -9,16 +9,8 @@ export default function ThemeButton() {
 
   // use the state and method defined in the ThemeContext object
   return (
-    <Button
-      className="btn-theme"
-      onClick={context.toggleTheme}
-    >
+    <Button className="btn-theme" onClick={context.toggleTheme}>
       {context.theme === "dark" ? "Light" : "Dark"} Mode
     </Button>
   );
 }
-
-  
-
-
-

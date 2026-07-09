@@ -1,8 +1,15 @@
 import React from "react";
 import clsx from "clsx";
 
-export default function Input(props) {
-  const { className, label, type = "text", placeholder, required, value, ...rest } = props;
+export default function Input({
+  className,
+  label,
+  type = "text",
+  placeholder,
+  required,
+  value,
+  ...rest
+}) {
   const classes = clsx(className);
 
   return (
@@ -14,8 +21,8 @@ export default function Input(props) {
         placeholder={placeholder}
         className={classes}
         value={value}
-        {...rest} 
+        {...rest}
       />
     </label>
-  )
+  );
 }

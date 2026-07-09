@@ -10,10 +10,10 @@ export default function Rain() {
       console.log(rain);
 
       put("rain.json", { isItRaining: rain })
-        .then(data => {
+        .then((data) => {
           console.log(data);
         })
-        .catch(error => console.error(error))
+        .catch((error) => console.error(error));
     }
   }, [put, rain]);
 
@@ -22,7 +22,7 @@ export default function Rain() {
 
     setRain(e.target.value);
   }
-  
+
   return (
     <>
       <div className="wrapper rain">
