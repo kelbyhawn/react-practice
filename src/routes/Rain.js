@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import useFetch from "../useFetch";
+import useFetch from "../hooks/useFetch";
 
 export default function Rain() {
   const [rain, setRain] = useState("");
@@ -24,33 +24,31 @@ export default function Rain() {
   }
 
   return (
-    <>
-      <div className="wrapper rain">
-        <form>
-          <label>Is it currently raining where you are?</label>
-          <select onChange={handleOptionChange}>
-            <option value="">Select</option>
-            <option value="true">Yes</option>
-            <option value="false">No</option>
-          </select>
+    <div className="wrapper rain">
+      <form>
+        <label>Is it currently raining where you are?</label>
+        <select onChange={handleOptionChange}>
+          <option value="">Select</option>
+          <option value="true">Yes</option>
+          <option value="false">No</option>
+        </select>
 
-          {rain !== "" && (
-            <p className="tiny">
-              <strong>
-                {rain === "true" ? "☂ It is" : "☀ It is not"} raining.
-              </strong>{" "}
-              <a
-                className="tiny"
-                href="https://kh-rain-default-rtdb.firebaseio.com/rain.json"
-                target="_blank"
-                rel="noreferrer"
-              >
-                View JSON
-              </a>
-            </p>
-          )}
-        </form>
-      </div>
-    </>
+        {rain !== "" && (
+          <p className="tiny">
+            <strong>
+              {rain === "true" ? "☂ It is" : "☀ It is not"} raining.
+            </strong>{" "}
+            <a
+              className="tiny"
+              href="https://kh-rain-default-rtdb.firebaseio.com/rain.json"
+              target="_blank"
+              rel="noreferrer"
+            >
+              View JSON
+            </a>
+          </p>
+        )}
+      </form>
+    </div>
   );
 }

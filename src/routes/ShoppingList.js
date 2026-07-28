@@ -65,8 +65,9 @@ export default function ShoppingList() {
   // complete an item
   function handleCompleteClick(index) {
     setItems(
-      [...items], // make a copy of the items array
-      (items[index].isComplete = !items[index].isComplete), // change the value of isComplete key
+      items.map((item, i) =>
+        i === index ? { ...item, isComplete: !item.isComplete } : item,
+      ),
     );
   }
 

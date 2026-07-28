@@ -16,7 +16,7 @@ export default function ItemForm({
         onChange={onItemChange} // uses setEntry state from App
         autoFocus={window.screen.width <= 480 ? false : true}
       />
-      <Button children={"Add Item"} />
+      <Button>Add Item</Button>
 
       <p className="tiny required">{validation}</p>
     </form>

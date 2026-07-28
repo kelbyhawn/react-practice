@@ -21,8 +21,9 @@ export default function ItemList({ items, onCompleteClick, onDeleteClick }) {
             <Button
               className="btn-delete"
               onClick={() => onDeleteClick(item.id)}
-              children="×"
-            />
+            >
+              ×
+            </Button>
           </div>
         </li>
       ))}
