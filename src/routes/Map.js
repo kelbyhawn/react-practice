@@ -9,6 +9,12 @@ export default function Map() {
   const [scriptLoaded, setScriptLoaded] = useState(false);
 
   useEffect(() => {
+    if (window.mapboxgl) {
+      setScriptLoaded(true);
+    }
+  }, []);
+
+  useEffect(() => {
     if (!scriptLoaded || !mapContainerRef.current || mapRef.current) return;
 
     // Set document title based on component
