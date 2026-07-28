@@ -1,11 +1,17 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import { createRoot } from "react-dom/client";
 import App from "./App";
 
 test("renders without crashing", () => {
   const div = document.createElement("div");
-  ReactDOM.render(<App />, div);
+  createRoot(div).render(<App />);
 });
 
 // Mapbox mock
-jest.mock("./routes/Map.js", () => () => <></>);
+jest.mock(
+  "./routes/Map.js",
+  () =>
+    function MockMap() {
+      return <></>;
+    },
+);

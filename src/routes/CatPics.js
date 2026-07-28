@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 import Loader from "../components/Loader";
 import useFetch from "../hooks/useFetch";
 import Button from "../ui-kit/Button";
@@ -35,7 +36,13 @@ export default function CatPics() {
       <h1>Cats!</h1>
       <div className="wrapper cat">
         <figure>
-          <img src={cat.url} alt="A random cat" />
+          <Image
+            src={cat.url}
+            alt="A random cat"
+            width={400}
+            height={500}
+            loading="lazy"
+          />
         </figure>
 
         {cat.breeds && (
@@ -44,11 +51,9 @@ export default function CatPics() {
           </p>
         )}
 
-        <Button
-          onClick={() => setRefresh([])}
-          disabled={isLoading}
-          children={"Purrress for a new cat"}
-        />
+        <Button onClick={() => setRefresh([])} disabled={isLoading}>
+          Purrress for a new cat
+        </Button>
 
         <p className="tiny">
           Photos from{" "}

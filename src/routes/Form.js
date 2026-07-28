@@ -79,7 +79,7 @@ export default function Form() {
           <textarea {...register("story")}></textarea>
         </label>
 
-        <Button children={btnCopy} />
+        <Button>{btnCopy}</Button>
       </form>
       <p className="tiny">Check the console to see inputted data.</p>
     </>
