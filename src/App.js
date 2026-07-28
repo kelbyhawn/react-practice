@@ -1,7 +1,7 @@
 import React from "react";
 import { HashRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "./ThemeContext";
-import Layout from "./Layout";
+import Container from "./Container";
 import ShoppingList from "./routes/ShoppingList";
 import CatPics from "./routes/CatPics";
 import FetchExamples from "./routes/FetchExamples";
@@ -14,7 +14,7 @@ function App() {
     <>
       <Routes>
         {/* nest routes to render inside the Layout component */}
-        <Route path="/" element={<Layout />}>
+        <Route path="/" element={<Container />}>
           {/* add "index" attribute to set the home page */}
           <Route index element={<ShoppingList />} />
           <Route path="cats" element={<CatPics />} />
@@ -37,8 +37,8 @@ function AppWrapper() {
       <ThemeProvider>
         <App />
       </ThemeProvider>
-    </HashRouter>  
-  )
+    </HashRouter>
+  );
 }
 
 export default AppWrapper;

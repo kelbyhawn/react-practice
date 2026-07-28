@@ -3,7 +3,7 @@ import ThemeButton from "./ThemeButton";
 
 // Layout component shares markup you want to show up on every page
 // - like site logo, <nav>, <main>, <footer>, etc...
-export default function Layout() {
+export default function Container() {
   const year = new Date().getFullYear();
 
   return (
