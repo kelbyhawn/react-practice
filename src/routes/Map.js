@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from "react";
-import mapboxgl from "!mapbox-gl"; // eslint-disable-line import/no-webpack-loader-syntax
+import React, { useState, useEffect, useRef } from "react";
+import mapboxgl from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 
-mapboxgl.accessToken =
-  "pk.eyJ1Ijoia2VsYnloYXduIiwiYSI6ImNrdWxka3pjeDNncnMydW8xNTRjN3k1cnEifQ.aaKSW9JCIOELKE8jd6D0HQ";
+mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN || "";
 
 export default function Map() {
+  const mapRef = useRef();
+  const mapContainerRef = useRef();
   const [marker, setMarker] = useState();
 
   useEffect(() => {
@@ -13,8 +14,9 @@ export default function Map() {
     document.title = "Map";
 
     // initialize map only once
-    const map = new mapboxgl.Map({
-      container: "map",
+    mapRef.current = new mapboxgl.Map({
+      accessToken: mapboxgl.accessToken,
+      container: mapContainerRef.current,
       style: "mapbox://styles/mapbox/streets-v11",
       center: [-122.33207, 47.60621],
       zoom: 10,
@@ -25,10 +27,14 @@ export default function Map() {
       color: "#000000", // customize color
     })
       .setLngLat([-122.33207, 47.60621]) // set default marker position in center of map
-      .addTo(map); // adds to map
+      .addTo(mapRef.current); // adds to map
 
     // set marker state based on location chosen from dropdown
     setMarker(marker);
+
+    return () => {
+      mapRef.current.remove();
+    };
   }, []);
 
   // set landmarks object key & value pairs (landmark: [lng, lat])
@@ -59,7 +65,7 @@ export default function Map() {
         </select>
       </form>
       <div className="map-wrapper">
-        <div id="map" className="map-container" />
+        <div ref={mapContainerRef} className="map-container" />
       </div>
     </>
   );
