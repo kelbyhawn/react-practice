@@ -8,6 +8,7 @@ export default function Map() {
   const [marker, setMarker] = useState();
   const [scriptLoaded, setScriptLoaded] = useState(false);
 
+  // Check if mapboxgl is loaded when navigating to other pages
   useEffect(() => {
     if (window.mapboxgl) {
       setScriptLoaded(true);
