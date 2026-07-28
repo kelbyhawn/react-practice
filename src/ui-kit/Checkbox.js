@@ -10,11 +10,9 @@ export default function Checkbox({
   const classes = clsx(className);
 
   return (
-    <>
-      <label>
-        <input type={type} value={value} className={classes} {...rest} />
-        {value}
-      </label>
-    </>
+    <label>
+      <input type={type} value={value} className={classes} {...rest} />
+      {value}
+    </label>
   );
 }

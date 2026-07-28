@@ -11,21 +11,19 @@ import NotFound from "./routes/NotFound";
 
 function App() {
   return (
-    <>
-      <Routes>
-        {/* nest routes to render inside the Layout component */}
-        <Route path="/" element={<Container />}>
-          {/* add "index" attribute to set the home page */}
-          <Route index element={<ShoppingList />} />
-          <Route path="cats" element={<CatPics />} />
-          <Route path="fetch-examples" element={<FetchExamples />} />
-          <Route path="map" element={<Map />} />
-          <Route path="form" element={<Form />} />
-          {/* handle 404 not found */}
-          <Route path="*" element={<NotFound />} />
-        </Route>
-      </Routes>
-    </>
+    <Routes>
+      {/* nest routes to render inside the Layout component */}
+      <Route path="/" element={<Container />}>
+        {/* add "index" attribute to set the home page */}
+        <Route index element={<ShoppingList />} />
+        <Route path="cats" element={<CatPics />} />
+        <Route path="fetch-examples" element={<FetchExamples />} />
+        <Route path="map" element={<Map />} />
+        <Route path="form" element={<Form />} />
+        {/* handle 404 not found */}
+        <Route path="*" element={<NotFound />} />
+      </Route>
+    </Routes>
   );
 }
 
