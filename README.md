@@ -17,7 +17,7 @@ Includes:
 ## Dependencies
 
 - [React](https://reactjs.org/) - A declarative, efficient, and flexible JavaScript library for building user interfaces.
-- [Create React App](https://create-react-app.dev) - Set up a modern web app by running one command.
+- [Next.js](https://nextjs.org/) - The React framework for the web.
 - [React Router](https://www.npmjs.com/package/react-router) - Declarative routing for React
 - [Sass](https://www.npmjs.com/package/sass) - CSS with superpowers.
 - [clsx](https://www.npmjs.com/package/clsx) - A tiny (228B) utility for constructing `className` strings conditionally.
@@ -28,7 +28,4 @@ Includes:
 
 1. Copy `.env.example` to `.env.local`.
 2. Set `NEXT_PUBLIC_MAPBOX_TOKEN` with your Mapbox public token (`pk...`).
-3. In Mapbox token settings, allow these origins:
-   - `http://localhost:3000`
-   - your deployed site origin (for example your Netlify domain)
-4. Restart the dev server after changing `.env.local`.
+3. Restart the dev server after changing `.env.local`.
