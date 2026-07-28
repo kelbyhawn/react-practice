@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import Loader from "../Loader";
-import useFetch from "../useFetch";
+import Loader from "../components/Loader";
+import useFetch from "../hooks/useFetch";
 import Button from "../ui-kit/Button";
 
 export default function CatPics() {

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import useFetch from "../useFetch";
+import useFetch from "../hooks/useFetch";
 
 export default function Rain() {
   const [rain, setRain] = useState("");

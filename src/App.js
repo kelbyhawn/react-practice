@@ -1,6 +1,6 @@
 import React from "react";
 import { HashRouter, Routes, Route } from "react-router-dom";
-import { ThemeProvider } from "./ThemeContext";
+import { ThemeProvider } from "./components/ThemeContext";
 import Container from "./Container";
 import ShoppingList from "./routes/ShoppingList";
 import CatPics from "./routes/CatPics";

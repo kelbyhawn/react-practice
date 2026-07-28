@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { ThemeContext } from "./ThemeContext";
-import Button from "./ui-kit/Button";
+import Button from "../ui-kit/Button";
 
 export default function ThemeButton() {
   // create a context variable using the useContext hook
