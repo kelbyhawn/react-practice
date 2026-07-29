@@ -9,7 +9,7 @@ test("renders without crashing", () => {
 
 // Mapbox mock
 jest.mock(
-  "./routes/Map.js",
+  "../routes/Map.js",
   () =>
     function MockMap() {
       return <></>;
