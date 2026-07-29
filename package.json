@@ -6,9 +6,7 @@
     "node": "22.x"
   },
   "dependencies": {
-    "@testing-library/jest-dom": "^6.4.0",
-    "@testing-library/react": "^14.2.0",
-    "@testing-library/user-event": "^14.5.0",
+    "@testing-library/user-event": "^14.5.2",
     "clsx": "^1.1.1",
     "mapbox-gl": "^2.15.0",
     "next": "^16.2.12",
@@ -20,7 +18,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "npx serve@latest ./build"
+    "start": "npx serve@latest ./build",
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "eslintConfig": {
     "extends": [
@@ -41,9 +41,16 @@
     ]
   },
   "devDependencies": {
+    "@testing-library/dom": "^10.4.1",
+    "@testing-library/jest-dom": "^7.0.0",
+    "@testing-library/react": "^16.3.2",
+    "@types/jest": "^30.0.0",
     "eslint": "^9.39.5",
     "eslint-config-next": "^16.2.12",
     "eslint-config-prettier": "^10.1.8",
-    "sass": "^1.41.1"
+    "jest": "^30.4.2",
+    "jest-environment-jsdom": "^30.4.1",
+    "sass": "^1.41.1",
+    "ts-node": "^10.9.2"
   }
 }

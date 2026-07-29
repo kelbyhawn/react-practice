@@ -1,6 +1,6 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
-import App from "./App";
+import App from "../App";
 
 test("renders without crashing", () => {
   const div = document.createElement("div");
@@ -9,7 +9,7 @@ test("renders without crashing", () => {
 
 // Mapbox mock
 jest.mock(
-  "./routes/Map.js",
+  "../routes/Map.js",
   () =>
     function MockMap() {
       return <></>;
