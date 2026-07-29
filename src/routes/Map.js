@@ -6,14 +6,9 @@ export default function Map() {
   const mapRef = useRef();
   const mapContainerRef = useRef();
   const [marker, setMarker] = useState();
-  const [scriptLoaded, setScriptLoaded] = useState(false);
-
-  // Check if mapboxgl is loaded when navigating to other pages
-  useEffect(() => {
-    if (window.mapboxgl) {
-      setScriptLoaded(true);
-    }
-  }, []);
+  const [scriptLoaded, setScriptLoaded] = useState(
+    () => typeof window !== "undefined" && !!window.mapboxgl,
+  );
 
   useEffect(() => {
     if (!scriptLoaded || !mapContainerRef.current || mapRef.current) return;
