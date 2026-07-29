@@ -45,7 +45,7 @@ export default function ShoppingList() {
     setItems([
       ...items,
       {
-        id: items.length + 1,
+        id: crypto.randomUUID(),
         item: newItem, // set newItem props from newItem state
         isComplete: false,
       },
