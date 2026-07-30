@@ -1,6 +1,7 @@
+"use client";
 import React, { useState, useEffect } from "react";
-import ItemForm from "./ItemForm.js";
-import ItemList from "./ItemList.js";
+import ItemForm from "../components/ItemForm";
+import ItemList from "../components/ItemList";
 
 export default function ShoppingList() {
   const [newItem, setNewItem] = useState(""); // start w/ empty input

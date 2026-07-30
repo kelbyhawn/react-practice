@@ -1,12 +1,12 @@
-import { NavLink } from "react-router-dom";
+import Link from "next/link";
 import ThemeButton from "./ThemeButton";
 
 const HEADER_LINKS = [
-  { to: "/", label: "Shopping List" },
-  { to: "/cats", label: "Cats" },
-  { to: "/fetch-examples", label: "Fetch" },
-  { to: "/map", label: "Map" },
-  { to: "/form", label: "Form" },
+  { href: "/", label: "Shopping List" },
+  { href: "/cats", label: "Cats" },
+  { href: "/fetch", label: "Fetch" },
+  { href: "/map", label: "Map" },
+  { href: "/form", label: "Form" },
 ];
 
 export default function Header() {
@@ -16,7 +16,7 @@ export default function Header() {
         <ul>
           {HEADER_LINKS.map((link) => (
             <li key={link.label}>
-              <NavLink to={link.to}>{link.label}</NavLink>
+              <Link href={link.href}>{link.label}</Link>
             </li>
           ))}
         </ul>

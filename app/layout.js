@@ -1,3 +1,7 @@
+import Header from "../src/components/Header";
+import Footer from "../src/components/Footer";
+import { ThemeProvider } from "../src/components/ThemeContext";
+
 import { Work_Sans } from "next/font/google";
 import "../src/App.sass";
 
@@ -23,10 +27,12 @@ export default function RootLayout({ children }) {
           rel="stylesheet"
         />
       </head>
-      <body>
-        <div id="root" className={workSans.className}>
-          {children}
-        </div>
+      <body className={workSans.className}>
+        <ThemeProvider>
+          <Header />
+          <main>{children}</main>
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );
