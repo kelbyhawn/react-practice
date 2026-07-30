@@ -18,7 +18,6 @@ Includes:
 
 - [React](https://reactjs.org/) - A declarative, efficient, and flexible JavaScript library for building user interfaces.
 - [Next.js](https://nextjs.org/) - The React framework for the web.
-- [React Router](https://www.npmjs.com/package/react-router) - Declarative routing for React
 - [Sass](https://www.npmjs.com/package/sass) - CSS with superpowers.
 - [clsx](https://www.npmjs.com/package/clsx) - A tiny (228B) utility for constructing `className` strings conditionally.
 - [Mapbox GL JS](https://github.com/mapbox/mapbox-gl-js) - Interactive, thoroughly customizable maps in the browser
