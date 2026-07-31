@@ -7,14 +7,7 @@ export default function ShoppingList() {
   const [newItem, setNewItem] = useState(""); // start w/ empty input
   const [validation, setValidation] = useState(""); // start w/ empty p
   // Lazy initial state; return the value from localStorage w/ .getItem() method
-  const [items, setItems] = useState(() => {
-    const listItems = localStorage.getItem("items");
-    if (listItems) {
-      // parse items array when retrieving
-      return JSON.parse(listItems);
-    }
-    return []; // start w/ empty array
-  });
+  const [items, setItems] = useState([]);
 
   // update the title w/ the useEffect hook each time an item is added to the list
   // always put useEffect hook at the top of the component to avoid errors
@@ -26,6 +19,15 @@ export default function ShoppingList() {
       document.title = `${items.length} items in list`;
     }
   });
+
+  // get existing items from local storage
+  useEffect(() => {
+    const listItems = localStorage.getItem("items");
+    if (listItems) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      setItems(JSON.parse(listItems));
+    }
+  }, []);
 
   // store items added in local storage
   useEffect(() => {
