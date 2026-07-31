@@ -38,7 +38,7 @@ export default function ShoppingList() {
     if (!isLoading) return; // don't store items until the initial load is complete
     // stringify the array of items to store it
     localStorage.setItem("items", JSON.stringify(items));
-  }, [items, isLoading]); // update when items state changes
+  }, [items, isLoading]); // update when items and isLoading state changes
 
   function handleFormSubmit(e) {
     e.preventDefault();
