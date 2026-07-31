@@ -1,3 +1,4 @@
+"use client";
 import { createContext, useEffect, useState } from "react";
 
 // Context is useful to pass down global data to multiple components throughout an app

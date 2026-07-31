@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import Rain from "./Rain";
+import Rain from "../components/Rain";
 
 export default function FetchExamples() {
   // Set document title based on component
