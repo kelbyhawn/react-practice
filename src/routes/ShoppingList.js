@@ -4,10 +4,10 @@ import ItemForm from "../components/ItemForm";
 import ItemList from "../components/ItemList";
 
 export default function ShoppingList() {
-  const [newItem, setNewItem] = useState(""); // start w/ empty input
-  const [validation, setValidation] = useState(""); // start w/ empty p
-  // Lazy initial state; return the value from localStorage w/ .getItem() method
+  const [newItem, setNewItem] = useState("");
   const [items, setItems] = useState([]);
+  const [validation, setValidation] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   // update the title w/ the useEffect hook each time an item is added to the list
   // always put useEffect hook at the top of the component to avoid errors
@@ -22,18 +22,23 @@ export default function ShoppingList() {
 
   // get existing items from local storage
   useEffect(() => {
-    const listItems = localStorage.getItem("items");
+    const listItems =
+      typeof window !== "undefined"
+        ? window.localStorage.getItem("items")
+        : null;
     if (listItems) {
       // eslint-disable-next-line react-hooks/set-state-in-effect
       setItems(JSON.parse(listItems));
     }
+    setIsLoading(true);
   }, []);
 
   // store items added in local storage
   useEffect(() => {
+    if (!isLoading) return; // don't store items until the initial load is complete
     // stringify the array of items to store it
     localStorage.setItem("items", JSON.stringify(items));
-  }, [items]); // update when items state changes
+  }, [items, isLoading]); // update when items state changes
 
   function handleFormSubmit(e) {
     e.preventDefault();
