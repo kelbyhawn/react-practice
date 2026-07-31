@@ -14,7 +14,11 @@ export default function ItemForm({
         label="Enter an item:"
         value={newItem} // uses entry state from App
         onChange={onItemChange} // uses setEntry state from App
-        autoFocus={window.screen.width <= 480 ? false : true}
+        autoFocus={
+          typeof window !== "undefined" && window.screen.width <= 480
+            ? false
+            : true
+        }
       />
       <Button>Add Item</Button>
 
