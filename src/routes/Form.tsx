@@ -6,8 +6,8 @@ type FormData = {
   firstName: string;
   lastName: string;
   zipCode: string;
-  animal?: string;
-  story?: string;
+  animal: string;
+  story: string;
 };
 
 export default function Form() {

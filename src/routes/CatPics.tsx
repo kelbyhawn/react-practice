@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import Loader from "../components/Loader";
 import useFetch from "../hooks/useFetch";
@@ -6,13 +6,9 @@ import Button from "../ui-kit/Button";
 
 export default function CatPics() {
   const [cat, setCat] = useState<any>(null);
-  const [refresh, setRefresh] = useState(0);
   const { get, isLoading } = useFetch("https://api.thecatapi.com/v1/");
 
-  useEffect(() => {
-    // Set document title based on component
-    document.title = "Cats";
-
+  const fetchCat = useCallback(() => {
     get("images/search")
       .then((data) => {
         if (data) {
@@ -20,8 +16,14 @@ export default function CatPics() {
         }
       })
       .catch((error) => console.error(error));
+  }, [get]);
+
+  useEffect(() => {
+    // Set document title based on component
+    document.title = "Cats";
+    fetchCat();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [refresh]);
+  }, []);
 
   if (isLoading) {
     return <Loader />;
@@ -45,13 +47,7 @@ export default function CatPics() {
           />
         </figure>
 
-        {cat.breeds && (
-          <p className="tiny">
-            <strong>Cat breed:</strong> {cat.breeds.name}
-          </p>
-        )}
-
-        <Button onClick={() => setRefresh(refresh + 1)} disabled={isLoading}>
+        <Button onClick={fetchCat} disabled={isLoading}>
           Purrress for a new cat
         </Button>
 
