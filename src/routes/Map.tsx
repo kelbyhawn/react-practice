@@ -1,13 +1,13 @@
 "use client";
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import Script from "next/script";
 
 export default function Map() {
-  const mapRef = useRef();
-  const mapContainerRef = useRef();
-  const [marker, setMarker] = useState();
+  const mapRef = useRef<any>(null);
+  const mapContainerRef = useRef<HTMLDivElement>(null);
+  const [marker, setMarker] = useState<any>(null);
   const [scriptLoaded, setScriptLoaded] = useState(
-    () => typeof window !== "undefined" && !!window.mapboxgl,
+    () => typeof window !== "undefined" && !!(window as any).mapboxgl,
   );
 
   useEffect(() => {
@@ -16,7 +16,7 @@ export default function Map() {
     // Set document title based on component
     document.title = "Map";
 
-    const mapboxgl = window.mapboxgl;
+    const mapboxgl = (window as any).mapboxgl;
     mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN || "";
 
     // initialize map only once

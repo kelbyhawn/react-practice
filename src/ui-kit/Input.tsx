@@ -1,5 +1,15 @@
-import React from "react";
 import clsx from "clsx";
+
+type InputProps = {
+  className?: string;
+  label?: string;
+  type?: string;
+  placeholder?: string;
+  required?: boolean;
+  value?: string;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  autoFocus?: boolean;
+};
 
 export default function Input({
   className,
@@ -8,8 +18,10 @@ export default function Input({
   placeholder,
   required,
   value,
+  onChange,
+  autoFocus,
   ...rest
-}) {
+}: InputProps) {
   const classes = clsx(className);
 
   return (
@@ -21,6 +33,8 @@ export default function Input({
         placeholder={placeholder}
         className={classes}
         value={value}
+        onChange={onChange}
+        autoFocus={autoFocus}
         {...rest}
       />
     </label>

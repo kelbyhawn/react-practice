@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import useFetch from "../hooks/useFetch";
 
 export default function Rain() {
-  const [rain, setRain] = useState("");
+  const [rain, setRain] = useState<string>("");
   const { put } = useFetch("https://kh-rain-default-rtdb.firebaseio.com/");
 
   useEffect(() => {
@@ -17,7 +17,7 @@ export default function Rain() {
     }
   }, [put, rain]);
 
-  function handleOptionChange(e) {
+  function handleOptionChange(e: React.ChangeEvent<HTMLSelectElement>) {
     e.preventDefault();
 
     setRain(e.target.value);

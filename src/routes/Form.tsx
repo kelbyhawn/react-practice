@@ -1,21 +1,29 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Button from "../ui-kit/Button";
 import { useForm } from "react-hook-form";
 
+type FormData = {
+  firstName: string;
+  lastName: string;
+  zipCode: string;
+  animal?: string;
+  story?: string;
+};
+
 export default function Form() {
-  const [btnCopy, setBtnCopy] = useState("Submit Form");
+  const [btnCopy, setBtnCopy] = useState<string>("Submit Form");
   const {
     register,
     formState: { errors },
     handleSubmit,
-  } = useForm();
+  } = useForm<FormData>();
 
   useEffect(() => {
     // Set document title based on component
     document.title = "Basic Form";
   });
 
-  function onSubmit(data, e) {
+  function onSubmit(data: FormData, e: React.SubmitEvent<HTMLFormElement>) {
     console.log(data);
     e.target.reset();
     // change button copy on submit

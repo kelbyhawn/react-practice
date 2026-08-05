@@ -1,7 +1,12 @@
 import Link from "next/link";
 import ThemeButton from "./ThemeButton";
 
-const HEADER_LINKS = [
+type HeaderLink = {
+  href: string;
+  label: string;
+};
+
+const HEADER_LINKS: HeaderLink[] = [
   { href: "/", label: "Shopping List" },
   { href: "/cats", label: "Cats" },
   { href: "/fetch", label: "Fetch" },

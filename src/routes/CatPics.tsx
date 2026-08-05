@@ -5,8 +5,8 @@ import useFetch from "../hooks/useFetch";
 import Button from "../ui-kit/Button";
 
 export default function CatPics() {
-  const [cat, setCat] = useState();
-  const [refresh, setRefresh] = useState();
+  const [cat, setCat] = useState<any>(null);
+  const [refresh, setRefresh] = useState(0);
   const { get, isLoading } = useFetch("https://api.thecatapi.com/v1/");
 
   useEffect(() => {
@@ -51,7 +51,7 @@ export default function CatPics() {
           </p>
         )}
 
-        <Button onClick={() => setRefresh([])} disabled={isLoading}>
+        <Button onClick={() => setRefresh(refresh + 1)} disabled={isLoading}>
           Purrress for a new cat
         </Button>
 

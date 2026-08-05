@@ -1,10 +1,18 @@
 import { useState } from "react";
 
-export default function useFetch(baseUrl) {
+type UseFetchReturnType = {
+  get: (url: string) => Promise<any>;
+  post: (url: string, body: any) => Promise<any>;
+  put: (url: string, body: any) => Promise<any>;
+  isLoading: boolean;
+  setIsLoading: (isLoading: boolean) => void;
+};
+
+export default function useFetch(baseUrl: string): UseFetchReturnType {
   const [isLoading, setIsLoading] = useState(true);
 
   // GET method - retrieve data from an API
-  function get(url) {
+  function get(url: string) {
     return new Promise((resolve, reject) => {
       fetch(baseUrl + url)
         .then((response) => response.json())
@@ -24,7 +32,7 @@ export default function useFetch(baseUrl) {
   }
 
   // POST method - send new data to an API
-  function post(url, body) {
+  function post(url: string, body: any) {
     return new Promise((resolve, reject) => {
       fetch(baseUrl + url, {
         method: "POST",
@@ -50,7 +58,7 @@ export default function useFetch(baseUrl) {
   }
 
   // PUT method - update existing data in an API
-  function put(url, body) {
+  function put(url: string, body: any) {
     return new Promise((resolve, reject) => {
       fetch(baseUrl + url, {
         method: "PUT",

@@ -1,13 +1,19 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import ItemForm from "../components/ItemForm";
 import ItemList from "../components/ItemList";
 
+type Item = {
+  id: string;
+  item: string;
+  isComplete: boolean;
+};
+
 export default function ShoppingList() {
-  const [newItem, setNewItem] = useState("");
-  const [items, setItems] = useState([]);
-  const [validation, setValidation] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
+  const [newItem, setNewItem] = useState<string>("");
+  const [items, setItems] = useState<Item[]>([]);
+  const [validation, setValidation] = useState<string>("");
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   // update the title w/ the useEffect hook each time an item is added to the list
   // always put useEffect hook at the top of the component to avoid errors
