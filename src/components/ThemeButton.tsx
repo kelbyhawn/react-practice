@@ -1,12 +1,7 @@
 "use client";
 import { useContext } from "react";
-import { ThemeContext } from "./ThemeContext";
+import { ThemeContext, ThemeContextType } from "./ThemeContext";
 import Button from "../ui-kit/Button";
-
-type ThemeContextType = {
-  theme: string;
-  toggleTheme: () => void;
-};
 
 export default function ThemeButton() {
   // create a context variable using the useContext hook
