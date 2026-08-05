@@ -4,12 +4,21 @@ import { createContext, useEffect, useState } from "react";
 // Context is useful to pass down global data to multiple components throughout an app
 // - common use cases for Context: dark/light themes, language, currency, user profile details (id, image, bio)
 
+export type ThemeContextType = {
+  theme: string;
+  toggleTheme: () => void;
+};
+
+type ThemeProviderProps = {
+  children: React.ReactNode;
+};
+
 // create the Context for theme
-const ThemeContext = createContext();
+const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 // create a Theme Provider
 // - this wraps components and allows them to use the global data created in the Context
-function ThemeProvider(props) {
+function ThemeProvider({ children }: ThemeProviderProps) {
   // set a theme state
   const [theme, setTheme] = useState("dark");
 
@@ -40,9 +49,7 @@ function ThemeProvider(props) {
   // return the Context Provider
   // - return the value object above with the value attribute
   return (
-    <ThemeContext.Provider value={value}>
-      {props.children}
-    </ThemeContext.Provider>
+    <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
   );
 }
 

@@ -1,13 +1,19 @@
-import React from "react";
 import Button from "../ui-kit/Button";
 import Input from "../ui-kit/Input";
+
+type ItemFormProps = {
+  newItem: string;
+  validation: string;
+  onItemChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onFormSubmit: (e: React.SubmitEvent<HTMLFormElement>) => void;
+};
 
 export default function ItemForm({
   newItem,
   onItemChange,
   validation,
   onFormSubmit,
-}) {
+}: ItemFormProps) {
   return (
     <form onSubmit={onFormSubmit}>
       <Input
