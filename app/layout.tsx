@@ -3,7 +3,7 @@ import Footer from "../src/components/Footer";
 import { ThemeProvider } from "../src/components/ThemeContext";
 
 import { Work_Sans } from "next/font/google";
-import "../src/App.sass";
+import "../src/styles/main.scss";
 
 const workSans = Work_Sans({
   weight: ["300", "500"],
